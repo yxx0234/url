@@ -16,174 +16,133 @@ textarea:focus{border-color:#e94560}
 button{flex:1;padding:12px;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-weight:600}
 .btn-gen{background:#e94560;color:#fff}
 .btn-copy{background:#0f3460;color:#eee}
-.dl-btn{background:#533483;color:#fff;flex:0.5}
 .result-box{margin-top:12px;background:#16213e;border:1px solid #0f3460;border-radius:8px;padding:12px;font-size:11px;color:#0f0;min-height:44px;max-height:300px;overflow:auto;display:none;white-space:pre-wrap;word-break:break-all}
 .result-box.show{display:block}
 .msg{margin-top:8px;font-size:12px;color:#888;text-align:center;display:none}
 .msg.show{display:block}
-.url-info{margin-top:8px;font-size:13px;color:#e94560;text-align:center;display:none;font-weight:700}
-.url-info.show{display:block}
 </style>
 </head>
 <body>
 <div class="container">
-<h2>节点 → 订阅 URL</h2>
-<p class="sub">粘贴 vmess:// / vless:// / trojan:// / ss:// 链接，自动生成 Clash YAML<br>复制后到 GitHub 仓库新建 config.yaml 粘贴进去<br>订阅地址就是：<b>https://yxx0234.github.io/url/config.yaml</b></p>
+<h2>节点 → 订阅 YAML</h2>
+<p class="sub">粘贴 vmess:// / vless:// / trojan:// / ss:// 链接<br>复制生成的 YAML 去 GitHub 仓库创建 config.yaml<br>订阅地址：<b>https://fastly.jsdelivr.net/gh/yxx0234/url@main/config.yaml</b></p>
 <textarea id="input" placeholder="每行粘贴一条节点链接..."></textarea>
 <div class="btns">
   <button class="btn-gen" onclick="generate()">生成 YAML</button>
   <button class="btn-copy" onclick="copyYaml()">复制 YAML</button>
-  <button class="dl-btn" onclick="download()">下载文件</button>
 </div>
 <div id="result" class="result-box"></div>
 <div id="msg" class="msg"></div>
-<div id="urlinfo" class="url-info"></div>
 </div>
 
 <script>
+function safeName(str){
+  return str.replace(/[^a-zA-Z0-9\u4e00-\u9fff\-_ ]/g,'').substring(0,30)||'节点';
+}
+
+function decodeB64(s){
+  try{ return atob(s); }catch(e){ return s; }
+}
+
 function parseSS(uri){
   try{
-    // ss://base64#name or ss://method:password@server:port#name or ss://base64
     let main = uri.replace('ss://','');
     let tag = '';
-    if(main.includes('#')){
-      [main,tag] = main.split('#');
-      tag = decodeURIComponent(tag);
+    if(main.indexOf('#')>0){
+      let idx = main.lastIndexOf('#');
+      tag = decodeURIComponent(main.substring(idx+1));
+      main = main.substring(0,idx);
     }
-    // try base64 decode
-    let decoded;
-    try{ decoded = atob(main); }catch(e){ decoded = main; }
-    // format: method:password@server:port
-    let method,password,server,port;
-    if(decoded.includes('@')){
-      let [up,sp] = decoded.split('@');
-      [method,password] = up.split(':');
-      [server,port] = sp.split(':');
-    }
-    return {name: tag||'SS节点', type:'ss', server, port: parseInt(port)||8388, cipher: method||'aes-256-gcm', password};
+    let decoded = decodeB64(main);
+    // "method:password@server:port" or just "method:password"
+    if(decoded.indexOf('@')<0) return null;
+    let [up,sp] = decoded.split('@');
+    let [method,password] = up.split(':');
+    let [server,port] = sp.split(':');
+    return {name:safeName(tag)||'SS',type:'ss',server,port:parseInt(port)||8388,cipher:method||'aes-256-gcm',password};
   }catch(e){ return null; }
 }
 
 function parseVMess(uri){
   try{
-    const j = JSON.parse(atob(uri.replace('vmess://','')));
+    let j = JSON.parse(decodeB64(uri.replace('vmess://','')));
     return {
-      name: j.ps||'VMess节点', type:'vmess',
-      server: j.add, port: parseInt(j.port)||443,
-      uuid: j.id, alterId: j.aid||0, cipher: j.scy||'auto',
-      network: j.net||'', 'ws-opts': j.net==='ws'?{path:j.path||'/',headers:j.host?{Host:j.host}:{}}:null
+      name: safeName(j.ps)||'VM',
+      type: 'vmess', server: j.add, port: parseInt(j.port)||443,
+      uuid: j.id, alterId: j.aid||0, cipher: j.scy||'auto'
     };
   }catch(e){ return null; }
 }
 
 function parseTrojan(uri){
   try{
-    let main = uri.replace('trojan://','');
-    let tag = '';
-    if(main.includes('#')){
-      [main,tag] = main.split('#');
-      tag = decodeURIComponent(tag);
+    let main = uri.replace('trojan://',''), tag='';
+    if(main.indexOf('#')>0){
+      let idx = main.lastIndexOf('#');
+      tag = decodeURIComponent(main.substring(idx+1));
+      main = main.substring(0,idx);
     }
     let [up,sp] = main.split('@');
     let [server,port] = sp.split(':');
-    return {name: tag||'Trojan节点', type:'trojan', server, port: parseInt(port)||443, password: up};
+    return {name:safeName(tag)||'TJ',type:'trojan',server,port:parseInt(port)||443,password:up};
   }catch(e){ return null; }
 }
 
 function generate(){
-  const raw = document.getElementById('input').value.trim();
-  const box = document.getElementById('result');
-  const msg = document.getElementById('msg');
-  const urlinfo = document.getElementById('urlinfo');
-  box.classList.remove('show'); msg.classList.remove('show'); urlinfo.classList.remove('show');
-
+  let raw = document.getElementById('input').value.trim();
+  let box = document.getElementById('result'), msg = document.getElementById('msg');
+  box.classList.remove('show'); msg.classList.remove('show');
   if(!raw){ msg.textContent='请先粘贴节点链接'; msg.classList.add('show'); return; }
 
-  const lines = raw.split('\n').filter(l=>l.trim());
-  const proxies = [];
-  lines.forEach((line,i)=>{
-    line=line.trim();
-    let p = null;
-    if(line.startsWith('vmess://')) p = parseVMess(line);
-    else if(line.startsWith('ss://')) p = parseSS(line);
-    else if(line.startsWith('trojan://')) p = parseTrojan(line);
-    else if(line.startsWith('vless://')) {
-      // vless support
-      try{
-        let main=line.replace('vless://',''),tag='';
-        if(main.includes('#')){[main,tag]=main.split('#');tag=decodeURIComponent(tag);}
-        let [id,sp]=main.split('@');
-        let [server,rest]=sp.split(':');
-        let port=rest.split('?')[0];
-        p={name:tag||'VLESS节点',type:'vless',server,port:parseInt(port)||443,uuid:id,network:'tcp'};
-      }catch(e){}
-    }
-    if(!p) p = {name:'节点'+(i+1), server:'unknown', port:443};
-    proxies.push(p);
-  });
+  let lines = raw.split('\n').filter(l=>l.trim());
+  let proxies = [];
+  for(let i=0;i<lines.length;i++){
+    let l = lines[i].trim(), p = null;
+    if(l.startsWith('vmess://')) p = parseVMess(l);
+    else if(l.startsWith('ss://')) p = parseSS(l);
+    else if(l.startsWith('trojan://')) p = parseTrojan(l);
+    if(p) proxies.push(p);
+  }
 
-  const names = proxies.map(p=>p.name.replace(/[^a-zA-Z0-9\u4e00-\u9fff\-_ ]/g,''));
-  const proxyYaml = proxies.map((p,i)=>{
-    let s = `  - name: "${names[i]}"\n    type: ${p.type||'ss'}\n    server: ${p.server}\n    port: ${p.port}`;
-    if(p.uuid) s += `\n    uuid: ${p.uuid}`;
-    if(p.alterId!==undefined) s += `\n    alterId: ${p.alterId}`;
-    if(p.cipher) s += `\n    cipher: ${p.cipher}`;
-    if(p.password) s += `\n    password: ${p.password}`;
-    if(p.network && p.network!=='tcp') s += `\n    network: ${p.network}`;
-    return s;
-  }).join('\n');
+  if(proxies.length===0){ msg.textContent='没有识别到有效节点链接'; msg.classList.add('show'); return; }
 
-  const yaml = `# Clash Meta - ${new Date().toLocaleDateString('zh-CN')}
-port: 7890
-socks-port: 7891
-allow-lan: false
-mode: rule
-log-level: info
+  let names = proxies.map((_,i)=>'节点'+(i+1));
+  let yamlLines = [
+    '# Clash Meta - '+new Date().toLocaleDateString('zh-CN'),
+    'port: 7890','socks-port: 7891','allow-lan: false','mode: rule','log-level: info',
+    '','proxies:'
+  ];
 
-proxies:
-${proxyYaml}
+  for(let i=0;i<proxies.length;i++){
+    let p = proxies[i], n = names[i];
+    yamlLines.push('  - name: "'+n+'"');
+    yamlLines.push('    type: '+p.type);
+    yamlLines.push('    server: "'+p.server+'"');
+    yamlLines.push('    port: '+p.port);
+    if(p.cipher) yamlLines.push('    cipher: '+p.cipher);
+    if(p.password) yamlLines.push('    password: "'+p.password+'"');
+    if(p.uuid) yamlLines.push('    uuid: "'+p.uuid+'"');
+    if(p.alterId!==undefined) yamlLines.push('    alterId: '+p.alterId);
+  }
 
-proxy-groups:
-  - name: "🚀 代理"
-    type: url-test
-    proxies:
-${names.map(n => `      - "${n}"`).join('\n')}
-    url: "http://www.gstatic.com/generate_204"
-    interval: 300
+  yamlLines.push('','proxy-groups:','  - name: "\uD83D\uDE80 代理"','    type: url-test','    proxies:');
+  for(let n of names) yamlLines.push('      - "'+n+'"');
+  yamlLines.push('    url: "http://www.gstatic.com/generate_204"','    interval: 300');
+  yamlLines.push('','rules:','  - GEOIP,CN,DIRECT','  - MATCH,\uD83D\uDE80 代理','');
 
-rules:
-  - GEOIP,CN,DIRECT
-  - MATCH,🚀 代理
-`;
-
+  let yaml = yamlLines.join('\n');
   box.textContent = yaml;
   box.classList.add('show');
-  msg.textContent = `已生成 YAML，包含 ${proxies.length} 个节点`;
+  msg.textContent = '已生成 '+proxies.length+' 个节点。复制后去 GitHub 仓库 → 新建 config.yaml → 粘贴 → Commit';
   msg.classList.add('show');
-  urlinfo.textContent = '点击「下载文件」保存为 config.yaml → 上传到 GitHub 仓库 → 订阅地址：https://yxx0234.github.io/url/config.yaml';
-  urlinfo.classList.add('show');
 }
 
 function copyYaml(){
-  const box = document.getElementById('result');
-  const msg = document.getElementById('msg');
+  let box = document.getElementById('result'), msg = document.getElementById('msg');
   if(!box.classList.contains('show')){ msg.textContent='请先生成'; msg.classList.add('show'); return; }
   navigator.clipboard.writeText(box.textContent).then(()=>{
-    msg.textContent='已复制，去 GitHub 仓库新建 config.yaml 粘贴进去';
-    msg.classList.add('show');
-  }).catch(()=>{ msg.textContent='复制失败，请手动复制'; msg.classList.add('show'); });
-}
-
-function download(){
-  const box = document.getElementById('result');
-  const msg = document.getElementById('msg');
-  if(!box.classList.contains('show')){ msg.textContent='请先生成'; msg.classList.add('show'); return; }
-  const blob = new Blob([box.textContent],{type:'text/yaml'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'config.yaml';
-  a.click();
-  msg.textContent = '已下载 config.yaml，上传到 GitHub 仓库根目录即可';
+    msg.textContent='已复制！去 GitHub → 仓库 → Add file → config.yaml → 粘贴';
+  }).catch(()=>{ msg.textContent='复制失败，请手动复制'; });
   msg.classList.add('show');
 }
 </script>
