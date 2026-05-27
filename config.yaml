@@ -1,1 +1,27 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozNlpDSGVhYlVTZktqZlFFdko0SERWQDE4NS4yNDIuODYuMTU2OjU0MTcw#github.com%2Ffreefq+-+%E4%BF%84%E7%BD%97%E6%96%AF++1
+
+# Clash Meta - 2026/5/28
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "githubcomfreefq-俄罗斯1"
+    type: ss
+    server: 185.242.86.156
+    port: 54170
+    cipher: chacha20-ietf-poly1305
+    password: 36ZCHeabUSfKjfQEvJ4HDV
+
+proxy-groups:
+  - name: "🚀 代理"
+    type: url-test
+    proxies:
+      - "githubcomfreefq-俄罗斯1"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,🚀 代理
