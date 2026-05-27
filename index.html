@@ -3,119 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>节点转订阅</title>
+<title>订阅转换</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,system-ui,sans-serif;background:#1a1a2e;color:#eee;min-height:100vh;display:flex;justify-content:center;padding:20px}
 .container{width:100%;max-width:600px}
-h2{text-align:center;margin:20px 0 10px;font-size:20px}
+h2{text-align:center;margin:20px 0 10px}
 .sub{text-align:center;color:#888;font-size:13px;margin-bottom:20px}
-textarea{width:100%;height:220px;background:#16213e;border:1px solid #0f3460;border-radius:8px;color:#eee;padding:12px;font-size:13px;resize:vertical;outline:none}
+textarea{width:100%;height:200px;background:#16213e;border:1px solid #0f3460;border-radius:8px;color:#eee;padding:12px;font-size:13px;resize:vertical;outline:none}
 textarea:focus{border-color:#e94560}
 .btns{display:flex;gap:10px;margin:12px 0}
-button{flex:1;padding:12px;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-weight:600;transition:opacity .2s}
-button:hover{opacity:.85}
+button{flex:1;padding:12px;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-weight:600}
 .btn-gen{background:#e94560;color:#fff}
 .btn-copy{background:#0f3460;color:#eee}
 .result-box{margin-top:12px;background:#16213e;border:1px solid #0f3460;border-radius:8px;padding:12px;word-break:break-all;font-size:12px;color:#0f0;min-height:44px;display:none}
 .result-box.show{display:block}
 .msg{margin-top:8px;font-size:12px;color:#888;text-align:center;display:none}
 .msg.show{display:block}
-.footer{margin-top:24px;text-align:center;font-size:12px;color:#555}
-.footer a{color:#e94560}
+select{width:100%;padding:10px;background:#16213e;border:1px solid #0f3460;border-radius:8px;color:#eee;font-size:13px;margin-bottom:12px;outline:none}
 </style>
 </head>
 <body>
 <div class="container">
-<h2>订阅转换</h2>
-<p class="sub">粘贴 vmess:// / vless:// / trojan:// / ss:// 链接，自动生成 Clash 订阅 URL</p>
-<textarea id="input" placeholder="每行粘贴一条节点链接...&#10;&#10;例：vmess://eyJ2IjoiMiI..."></textarea>
+<h2>节点 → 订阅 URL</h2>
+<p class="sub">粘贴 vmess:// / vless:// / trojan:// / ss:// 链接，点生成即可得到 FlClash 可用的订阅地址</p>
+<select id="target">
+  <option value="clash">Clash</option>
+  <option value="clashr">ClashR</option>
+</select>
+<textarea id="input" placeholder="每行粘贴一条节点链接..."></textarea>
 <div class="btns">
   <button class="btn-gen" onclick="generate()">生成订阅 URL</button>
   <button class="btn-copy" onclick="copyUrl()">复制链接</button>
 </div>
 <div id="result" class="result-box"></div>
 <div id="msg" class="msg"></div>
-<div class="footer">
-  将此页部署到<a href="https://pages.github.com" target="_blank">GitHub Pages</a>即可永久使用
-</div>
 </div>
 
 <script>
-function generate(){
+const API = 'https://sub.xeton.dev/sub';
+
+async function generate(){
   const raw = document.getElementById('input').value.trim();
+  const target = document.getElementById('target').value;
   const box = document.getElementById('result');
   const msg = document.getElementById('msg');
   box.classList.remove('show');
   msg.classList.remove('show');
+
   if(!raw){ msg.textContent='请先粘贴节点链接'; msg.classList.add('show'); return; }
 
-  const lines = raw.split('\n').filter(l => l.trim());
-  if(lines.length===0){ msg.textContent='未识别到有效链接'; msg.classList.add('show'); return; }
-
-  // 生成 Clash YAML 配置
-  const proxies = lines.map((line, i) => {
-    line = line.trim();
-    if(line.startsWith('vmess://')){
-      try{
-        const j = JSON.parse(atob(line.slice(8)));
-        return `  - name: "节点${i+1}"\n    type: vmess\n    server: ${j.add}\n    port: ${j.port}\n    uuid: ${j.id}\n    alterId: ${j.aid||0}\n    cipher: auto`;
-      }catch(e){
-        return `  - name: "节点${i+1}"\n    type: vmess\n    server: 请手动填写\n    port: 443\n    uuid: 请手动填写\n    alterId: 0\n    cipher: auto`;
-      }
-    } else if(line.startsWith('trojan://')){
-      const u = new URL(line);
-      return `  - name: "${decodeURIComponent(u.hash?.slice(1)||'节点'+(i+1))}"\n    type: trojan\n    server: ${u.hostname}\n    port: ${u.port||443}\n    password: ${u.username}`;
-    } else {
-      return `  - ${line}`;
-    }
-  }).join('\n');
-
-  const yaml =
-`# Clash Meta 配置 - ${new Date().toLocaleDateString('zh-CN')}
-port: 7890
-socks-port: 7891
-allow-lan: false
-mode: rule
-log-level: info
-external-controller: 127.0.0.1:9090
-
-proxies:
-${proxies}
-
-proxy-groups:
-  - name: "🚀 代理"
-    type: url-test
-    proxies:
-${lines.map((_,i) => `      - "节点${i+1}"`).join('\n')}
-    url: "http://www.gstatic.com/generate_204"
-    interval: 300
-
-rules:
-  - GEOIP,CN,DIRECT
-  - MATCH,🚀 代理
-`;
-
-  const url = 'data:text/yaml;base64,' + btoa(unescape(encodeURIComponent(yaml)));
-  box.textContent = url;
-  box.classList.add('show');
-  msg.textContent = `已生成，包含 ${lines.length} 个节点，可直接粘贴到 FlClash → URL`;
+  msg.textContent='生成中...';
   msg.classList.add('show');
+
+  try{
+    const b64 = btoa(unescape(encodeURIComponent(raw)));
+    const url = API + '?target=' + target + '&url=' + b64 + '&insert=false&emoji=true&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true';
+    box.textContent = url;
+    box.classList.add('show');
+    msg.textContent = '已生成，复制链接后在 FlClash → 配置 → URL 中粘贴即可';
+  }catch(e){
+    msg.textContent = '生成失败：' + e.message;
+  }
 }
 
 function copyUrl(){
   const box = document.getElementById('result');
   const msg = document.getElementById('msg');
   if(!box.classList.contains('show')){ msg.textContent='请先生成'; msg.classList.add('show'); return; }
-  const url = box.textContent;
-  if(/Mobi|Android|iPhone/i.test(navigator.userAgent)){
-    box.select();
-    document.execCommand('copy');
-  } else {
-    navigator.clipboard.writeText(url).catch(()=>{});
-  }
-  msg.textContent='已复制到剪贴板，粘贴到 FlClash 即可';
-  msg.classList.add('show');
+  navigator.clipboard.writeText(box.textContent).then(()=>{
+    msg.textContent='已复制，粘贴到 FlClash 即可';
+    msg.classList.add('show');
+  }).catch(()=>{
+    msg.textContent='复制失败，请手动复制';
+    msg.classList.add('show');
+  });
 }
 </script>
 </body>
