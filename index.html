@@ -7,35 +7,85 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,system-ui,sans-serif;background:#1a1a2e;color:#eee;min-height:100vh;display:flex;justify-content:center;padding:20px}
-.container{width:100%;max-width:600px}
+.container{width:100%;max-width:640px}
 h2{text-align:center;margin:20px 0 10px}
-.sub{text-align:center;color:#888;font-size:13px;margin-bottom:20px}
+.sub{text-align:center;color:#888;font-size:13px;margin-bottom:16px;line-height:1.6}
 textarea{width:100%;height:200px;background:#16213e;border:1px solid #0f3460;border-radius:8px;color:#eee;padding:12px;font-size:13px;resize:vertical;outline:none}
 textarea:focus{border-color:#e94560}
 .btns{display:flex;gap:10px;margin:12px 0}
-button{flex:1;padding:12px;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-weight:600}
+button{flex:1;padding:12px;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-weight:600;transition:opacity .2s}
+button:disabled{opacity:.5;cursor:not-allowed}
 .btn-gen{background:#e94560;color:#fff}
+.btn-push{background:#1db954;color:#fff}
 .btn-copy{background:#0f3460;color:#eee}
+input[type=password]{flex:1;padding:10px 12px;border:1px solid #0f3460;border-radius:8px;background:#16213e;color:#eee;font-size:13px;outline:none}
+input[type=password]:focus{border-color:#e94560}
 .result-box{margin-top:12px;background:#16213e;border:1px solid #0f3460;border-radius:8px;padding:12px;font-size:11px;color:#0f0;min-height:44px;max-height:300px;overflow:auto;display:none;white-space:pre-wrap;word-break:break-all}
 .result-box.show{display:block}
 .msg{margin-top:8px;font-size:12px;color:#888;text-align:center;display:none}
 .msg.show{display:block}
+.msg.ok{color:#1db954}
+.msg.err{color:#e94560}
+.token-row{margin:10px 0;display:flex;gap:10px;align-items:center}
+.token-row label{font-size:12px;color:#888;white-space:nowrap}
+summary{font-size:12px;color:#888;cursor:pointer;margin:4px 0}
+summary:hover{color:#e94560}
+.token-hint{font-size:11px;color:#666;margin-top:4px}
+.token-hint a{color:#e94560}
 </style>
 </head>
 <body>
 <div class="container">
-<h2>节点 → 订阅 YAML</h2>
-<p class="sub">粘贴 vmess:// / vless:// / trojan:// / ss:// 链接<br>复制生成的 YAML 去 GitHub 仓库创建 config.yaml<br>订阅地址：<b>https://fastly.jsdelivr.net/gh/yxx0234/url@main/config.yaml</b></p>
+<h2>节点 → 订阅 YAML → 一键推送</h2>
+<p class="sub">
+粘贴 vmess:// / vless:// / trojan:// / ss:// 链接<br>
+生成 YAML 后点击「推送」直接更新到 GitHub，FlClash 即刻生效<br>
+订阅地址：<b>https://fastly.jsdelivr.net/gh/yxx0234/url@main/config.yaml</b>
+</p>
+
+<details>
+<summary>GitHub Token 设置（首次使用需配置）</summary>
+<div class="token-row">
+  <label>Token:</label>
+  <input type="password" id="token" placeholder="ghp_xxxxxxxxxxxx">
+  <button style="flex:0 0 auto;padding:8px 14px;font-size:12px;background:#0f3460;color:#eee;border-radius:6px" onclick="saveToken()">保存</button>
+</div>
+<div class="token-hint">
+  在 GitHub → Settings → Developer settings → Personal access tokens → Tokens(classic) 创建<br>
+  勾选 <b>repo</b> 权限，生成后粘贴到这里。<a href="https://github.com/settings/tokens" target="_blank">点此创建</a>
+</div>
+</details>
+
 <textarea id="input" placeholder="每行粘贴一条节点链接..."></textarea>
 <div class="btns">
   <button class="btn-gen" onclick="generate()">生成 YAML</button>
-  <button class="btn-copy" onclick="copyYaml()">复制 YAML</button>
+  <button class="btn-push" id="btnPush" onclick="pushToGitHub()">推送更新</button>
+  <button class="btn-copy" onclick="copyYaml()">复制</button>
 </div>
 <div id="result" class="result-box"></div>
 <div id="msg" class="msg"></div>
 </div>
 
 <script>
+const REPO_OWNER = 'yxx0234';
+const REPO_NAME = 'url';
+const FILE_PATH = 'config.yaml';
+
+let currentYaml = '';
+
+function getToken(){ return localStorage.getItem('gh_token')||''; }
+
+function saveToken(){
+  let t = document.getElementById('token').value.trim();
+  localStorage.setItem('gh_token', t);
+  showMsg('Token 已保存' + (t?'':'（已清空）'), t?'ok':'');
+}
+
+(function(){
+  let t = getToken();
+  if(t) document.getElementById('token').value = t;
+})();
+
 function safeName(str){
   return str.replace(/[^a-zA-Z0-9\u4e00-\u9fff\-_ ]/g,'').substring(0,30)||'节点';
 }
@@ -54,10 +104,13 @@ function parseSS(uri){
       main = main.substring(0,idx);
     }
     let decoded = decodeB64(main);
-    // "method:password@server:port" or just "method:password"
     if(decoded.indexOf('@')<0) return null;
     let [up,sp] = decoded.split('@');
-    let [method,password] = up.split(':');
+    if(!up||!sp) return null;
+    let method='',password='';
+    let colonIdx = up.indexOf(':');
+    if(colonIdx>=0){ method=up.substring(0,colonIdx); password=up.substring(colonIdx+1); }
+    else { password=up; method='aes-256-gcm'; }
     let [server,port] = sp.split(':');
     return {name:safeName(tag)||'SS',type:'ss',server,port:parseInt(port)||8388,cipher:method||'aes-256-gcm',password};
   }catch(e){ return null; }
@@ -66,11 +119,18 @@ function parseSS(uri){
 function parseVMess(uri){
   try{
     let j = JSON.parse(decodeB64(uri.replace('vmess://','')));
-    return {
+    let p = {
       name: safeName(j.ps)||'VM',
       type: 'vmess', server: j.add, port: parseInt(j.port)||443,
-      uuid: j.id, alterId: j.aid||0, cipher: j.scy||'auto'
+      uuid: j.id
     };
+    if(j.aid!==undefined) p.alterId = j.aid;
+    if(j.scy) p.cipher = j.scy;
+    if(j.net) p.network = j.net;
+    if(j.path) p['ws-path'] = j.path;
+    if(j.host) p['ws-headers'] = {Host:j.host};
+    if(j.tls) p.tls = (j.tls==='tls');
+    return p;
   }catch(e){ return null; }
 }
 
@@ -82,33 +142,56 @@ function parseTrojan(uri){
       tag = decodeURIComponent(main.substring(idx+1));
       main = main.substring(0,idx);
     }
-    let [up,sp] = main.split('@');
-    let [server,port] = sp.split(':');
+    let [up,rest] = main.split('@');
+    if(!rest) return null;
+    let qidx = rest.indexOf('?');
+    let addr = qidx>=0 ? rest.substring(0,qidx) : rest;
+    let [server,port] = addr.split(':');
     return {name:safeName(tag)||'TJ',type:'trojan',server,port:parseInt(port)||443,password:up};
+  }catch(e){ return null; }
+}
+
+function parseVLess(uri){
+  try{
+    let main = uri.replace('vless://',''), tag='';
+    if(main.indexOf('#')>0){
+      let idx = main.lastIndexOf('#');
+      tag = decodeURIComponent(main.substring(idx+1));
+      main = main.substring(0,idx);
+    }
+    let atIdx = main.indexOf('@');
+    if(atIdx<0) return null;
+    let uuid = main.substring(0,atIdx);
+    let rest = main.substring(atIdx+1);
+    let qidx = rest.indexOf('?');
+    let addr = qidx>=0 ? rest.substring(0,qidx) : rest;
+    let [server,port] = addr.split(':');
+    return {name:safeName(tag)||'VL',type:'vless',server,port:parseInt(port)||443,uuid};
   }catch(e){ return null; }
 }
 
 function generate(){
   let raw = document.getElementById('input').value.trim();
   let box = document.getElementById('result'), msg = document.getElementById('msg');
-  box.classList.remove('show'); msg.classList.remove('show');
-  if(!raw){ msg.textContent='请先粘贴节点链接'; msg.classList.add('show'); return; }
+  box.classList.remove('show'); msg.classList.remove('show','ok','err');
+  if(!raw){ showMsg('请先粘贴节点链接','err'); return; }
 
   let lines = raw.split('\n').filter(l=>l.trim());
   let proxies = [];
-  for(let i=0;i<lines.length;i++){
-    let l = lines[i].trim(), p = null;
-    if(l.startsWith('vmess://')) p = parseVMess(l);
+  for(let l of lines){
+    let p = null;
+    if(l.startsWith('vmess://')||l.startsWith('v2rayn://')) p = parseVMess(l);
     else if(l.startsWith('ss://')) p = parseSS(l);
     else if(l.startsWith('trojan://')) p = parseTrojan(l);
+    else if(l.startsWith('vless://')) p = parseVLess(l);
     if(p) proxies.push(p);
   }
 
-  if(proxies.length===0){ msg.textContent='没有识别到有效节点链接'; msg.classList.add('show'); return; }
+  if(proxies.length===0){ showMsg('没有识别到有效节点链接','err'); return; }
 
-  let names = proxies.map((_,i)=>'节点'+(i+1));
+  let names = proxies.map((p,i)=>p.name||('节点'+(i+1)));
   let yamlLines = [
-    '# Clash Meta - '+new Date().toLocaleDateString('zh-CN'),
+    '# Clash Meta Config - ' + new Date().toLocaleDateString('zh-CN') + ' ' + new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'}),
     'port: 7890','socks-port: 7891','allow-lan: false','mode: rule','log-level: info',
     '','proxies:'
   ];
@@ -123,6 +206,10 @@ function generate(){
     if(p.password) yamlLines.push('    password: "'+p.password+'"');
     if(p.uuid) yamlLines.push('    uuid: "'+p.uuid+'"');
     if(p.alterId!==undefined) yamlLines.push('    alterId: '+p.alterId);
+    if(p.network) yamlLines.push('    network: '+p.network);
+    if(p['ws-path']) yamlLines.push('    ws-path: "'+p['ws-path']+'"');
+    if(p['ws-headers']) yamlLines.push('    ws-headers:\n      Host: "'+p['ws-headers'].Host+'"');
+    if(p.tls!==undefined) yamlLines.push('    tls: '+p.tls);
   }
 
   yamlLines.push('','proxy-groups:','  - name: "\uD83D\uDE80 代理"','    type: url-test','    proxies:');
@@ -130,20 +217,69 @@ function generate(){
   yamlLines.push('    url: "http://www.gstatic.com/generate_204"','    interval: 300');
   yamlLines.push('','rules:','  - GEOIP,CN,DIRECT','  - MATCH,\uD83D\uDE80 代理','');
 
-  let yaml = yamlLines.join('\n');
-  box.textContent = yaml;
+  currentYaml = yamlLines.join('\n');
+  box.textContent = currentYaml;
   box.classList.add('show');
-  msg.textContent = '已生成 '+proxies.length+' 个节点。复制后去 GitHub 仓库 → 新建 config.yaml → 粘贴 → Commit';
-  msg.classList.add('show');
+  showMsg('已生成 '+proxies.length+' 个节点。点击「推送更新」一键同步到 GitHub','ok');
+}
+
+function showMsg(text, cls){
+  let msg = document.getElementById('msg');
+  msg.textContent = text;
+  msg.className = 'msg show';
+  if(cls) msg.classList.add(cls);
+}
+
+async function pushToGitHub(){
+  let token = getToken();
+  if(!token){ showMsg('请先在 Token 设置中填写 GitHub Personal Access Token','err'); return; }
+  if(!currentYaml){ showMsg('请先生成 YAML','err'); return; }
+
+  let btn = document.getElementById('btnPush');
+  btn.disabled = true;
+  btn.textContent = '推送中...';
+
+  try{
+    let getResp = await fetch('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/contents/'+FILE_PATH,{
+      headers: {Authorization:'Bearer '+token, Accept:'application/vnd.github.v3+json'}
+    });
+    let sha = '';
+    if(getResp.ok){ let d = await getResp.json(); sha = d.sha; }
+    else if(getResp.status!==404){ throw new Error('获取文件信息失败: '+getResp.status); }
+
+    let putBody = {
+      message: '更新节点配置 ' + new Date().toLocaleString('zh-CN'),
+      content: btoa(unescape(encodeURIComponent(currentYaml))),
+      branch: 'main'
+    };
+    if(sha) putBody.sha = sha;
+
+    let putResp = await fetch('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/contents/'+FILE_PATH,{
+      method:'PUT',
+      headers: {Authorization:'Bearer '+token, Accept:'application/vnd.github.v3+json','Content-Type':'application/json'},
+      body: JSON.stringify(putBody)
+    });
+
+    if(putResp.ok){
+      showMsg('已推送到 GitHub！等待 1-2 分钟 CDN 刷新后可导入 FlClash','ok');
+    } else {
+      let err = await putResp.json();
+      showMsg('推送失败: '+(err.message||putResp.status),'err');
+    }
+  }catch(e){
+    showMsg('推送出错: '+e.message,'err');
+  }
+
+  btn.disabled = false;
+  btn.textContent = '推送更新';
 }
 
 function copyYaml(){
-  let box = document.getElementById('result'), msg = document.getElementById('msg');
-  if(!box.classList.contains('show')){ msg.textContent='请先生成'; msg.classList.add('show'); return; }
+  let box = document.getElementById('result');
+  if(!box.classList.contains('show')){ showMsg('请先生成','err'); return; }
   navigator.clipboard.writeText(box.textContent).then(()=>{
-    msg.textContent='已复制！去 GitHub → 仓库 → Add file → config.yaml → 粘贴';
-  }).catch(()=>{ msg.textContent='复制失败，请手动复制'; });
-  msg.classList.add('show');
+    showMsg('已复制！','ok');
+  }).catch(()=>{ showMsg('复制失败，请手动复制','err'); });
 }
 </script>
 </body>
