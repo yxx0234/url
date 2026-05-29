@@ -1,12 +1,11 @@
 proxies:
-- name: SS-加拿大\u003e英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000
+- name: SS-加拿大>英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000
   type: ss
   server: 144.217.164.29
   port: 12000
   password: 8JCsPssfgS8tiRwiMlhARg==
   cipher: aes-256-gcm
-  udp: true
-- name: VMESS-未知\u003e德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080
+- name: VMESS-未知>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080
   type: vmess
   server: 547.rtxconfigz.shop
   port: 8080
@@ -22,8 +21,7 @@ proxies:
     path: /@Malinda6104
     headers:
       HOST: node4.rtxconfigz.com
-  udp: true
-- name: VMESS-美国\u003e日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443
+- name: VMESS-美国>日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443
   type: vmess
   server: t1.620720.xyz
   port: 8443
@@ -39,21 +37,18 @@ proxies:
     path: /
     headers:
       Host: t1.620720.xyz
-  udp: true
 - name: SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990
   type: ss
   server: 45.154.204.7
   port: 990
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: SS-英国-NF解锁自制剧-ChatGPT-TikTok-146.19.49.251:443
   type: ss
   server: 146.19.49.251
   port: 443
   password: ODfxioK0VkKxTdpVQJ4rv8HglAu0vzv6
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: VMESS-加拿大-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-15.235.41.200:80
   type: vmess
   server: 15.235.41.200
@@ -67,14 +62,12 @@ proxies:
   skip-cert-verify: true
   ws-opts:
     path: /IOebhLMhl1CTbFHbL95myfRX2
-  udp: true
 - name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-71.19.148.143:443
   type: ss
   server: 71.19.148.143
   port: 443
   password: p78naCf2EfOlRSLTX0wFVx
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-38.92.10.226:45979
   type: vmess
   server: 38.92.10.226
@@ -88,14 +81,12 @@ proxies:
   skip-cert-verify: true
   ws-opts:
     path: /test
-  udp: true
 - name: SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990
   type: ss
   server: 23.95.76.59
   port: 990
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: VMESS-加拿大-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-51.79.102.253:80
   type: vmess
   server: 51.79.102.253
@@ -112,7 +103,6 @@ proxies:
     path: /IOebhLMhl1CTbFHbL95myfRX2
     headers:
       HOST: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  udp: true
 - name: SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
   type: ssr
   server: 107.151.182.253
@@ -121,35 +111,30 @@ proxies:
   cipher: rc4-md5
   protocol: origin
   obfs: plain
-  udp: true
 - name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-92.118.112.101:9483
   type: ss
   server: 92.118.112.101
   port: 9483
   password: qFvn2fNEvBgM5knffrN96q
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-15.204.247.49:12000
   type: ss
   server: 15.204.247.49
   port: 12000
   password: 8JCsPssfgS8tiRwiMlhARg==
   cipher: aes-256-gcm
-  udp: true
 - name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-pupas-shirting-unsung.freesocks.work:443
   type: ss
   server: pupas-shirting-unsung.freesocks.work
   port: 443
   password: p78naCf2EfOlRSLTX0wFVx
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: SS-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:990
   type: ss
   server: 79.127.233.170
   port: 990
   password: f8f7aCzcPKbsF8p3
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-v2ray.codefyinc.com:443
   type: vmess
   server: v2ray.codefyinc.com
@@ -165,14 +150,12 @@ proxies:
     path: /vmessws
     headers:
       Host: v2ray.codefyinc.com
-  udp: true
 - name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-23.95.75.146:443
   type: ss
   server: 23.95.75.146
   port: 443
   password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-198.23.174.168:20086
   type: vmess
   server: 198.23.174.168
@@ -186,7 +169,6 @@ proxies:
   skip-cert-verify: true
   ws-opts:
     path: /
-  udp: true
 - name: SSR-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:989
   type: ssr
   server: 79.127.233.170
@@ -195,7 +177,6 @@ proxies:
   cipher: aes-256-cfb
   protocol: origin
   obfs: plain
-  udp: true
 - name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c07.waimaojd.com:443
   type: vmess
   server: cg1c07.waimaojd.com
@@ -212,8 +193,7 @@ proxies:
     path: /api/v1/graphql
     headers:
       Host: cg1c07.waimaojd.com
-  udp: true
-- name: VMESS-美国\u003e德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-support.zoom.us:8080
+- name: VMESS-美国>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-support.zoom.us:8080
   type: vmess
   server: support.zoom.us
   port: 8080
@@ -229,7 +209,6 @@ proxies:
     path: /@Malinda6104
     headers:
       HOST: node4.rtxconfigz.com
-  udp: true
 - name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-209.126.84.189:443
   type: vmess
   server: 209.126.84.189
@@ -245,8 +224,7 @@ proxies:
     path: /vmessws
     headers:
       Host: 209.126.84.189
-  udp: true
-- name: VMESS-未知\u003e澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443
+- name: VMESS-未知>澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443
   type: vmess
   server: sy4.620720.xyz
   port: 443
@@ -262,8 +240,7 @@ proxies:
     path: /
     headers:
       Host: sy4.620720.xyz
-  udp: true
-- name: VMESS-未知\u003e美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083
+- name: VMESS-未知>美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083
   type: vmess
   server: hgtrojan.zabc.net
   port: 2083
@@ -280,14 +257,12 @@ proxies:
     path: /e6395c20
     headers:
       HOST: hgtrojan.zabc.net
-  udp: true
 - name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.175.87.207:10011
   type: ss
   server: 107.175.87.207
   port: 10011
   password: 86039b71-ba82-4ca8-838e-87086ae666de
   cipher: chacha20-ietf-poly1305
-  udp: true
 - name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c01.waimaojd.com:443
   type: vmess
   server: cg1c01.waimaojd.com
@@ -304,7 +279,6 @@ proxies:
     path: /api/v1/graphql
     headers:
       Host: cg1c01.waimaojd.com
-  udp: true
 - name: VMESS-美国-ChatGPT-TikTok-YouTube-cg1c04.waimaojd.com:443
   type: vmess
   server: cg1c04.waimaojd.com
@@ -322,7 +296,6 @@ proxies:
     path: /api/v1/graphql
     headers:
       HOST: cg1c04.waimaojd.com
-  udp: true
 - name: VMESS-美国-ChatGPT-TikTok-YouTube-cg1c14.waimaojd.com:443
   type: vmess
   server: cg1c14.waimaojd.com
@@ -340,118 +313,62 @@ proxies:
     path: /api/v1/graphql
     headers:
       HOST: cg1c14.waimaojd.com
-  udp: true
-- name: Trojan-jpbgp.netvigor.cc:19128
-  type: trojan
-  server: jpbgp.netvigor.cc
-  port: 19128
-  password: gcuCpQfaiVeDBdWG
-  udp: true
-  sni: yazhou10.dynu.net#台湾省 V2CROSS.COM
-  security: tls
-- name: 美国 V2CROSS.COM
-  type: vmess
-  server: gtm-sg-cc54q7d1q01.365cloud0285.com
-  port: 6001
-  uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-  alterId: 0
-  cipher: auto
-  udp: true
-  security: auto
-- name: VLESS-88.210.9.69:443
+- name: '%E4%BF%84%E7%BD%97%E6%96%AF+V2CROSS.COM'
   type: vless
-  server: 88.210.9.69
-  port: 443
-  uuid: ccbbd3a3-db22-4f82-956e-d65178de2743
-  udp: true
-  network: tcp
-  tls: true
-  servername: images.apple.com
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: aQdv6gDmsVZc5dO1WmmEQ6Q_puJhNUurND-TJJjtCSs
-    short-id: 8f2c0e7a15bd
-  encryption: none#俄罗斯 V2CROSS.COM
-- name: VLESS-ddfs.ummapeople.online:443
-  type: vless
-  server: ddfs.ummapeople.online
-  port: 443
-  uuid: ac195240-6005-412b-9829-1e56e5d5c52a
-  udp: true
-  network: raw
-  tls: true
-  servername: ddfs.ummapeople.online#巴林 V2CROSS.COM
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: NPt7NbrWjFl5Uq8xIuolxDDJFTzj5x5jwmiSTRPuuD8
-  encryption: none
-  headerType: none
-- name: VLESS-194.226.169.36:443
-  type: vless
-  server: 194.226.169.36
-  port: 443
-  uuid: fae3277c-0541-4ae9-bbbb-8247453ea652
-  udp: true
+  server: 77.73.238.191
+  port: 16622
+  uuid: f2e9df1b-e0ba-4b37-a301-6aab8662c926
   network: tcp
   tls: true
   servername: yahoo.com
   client-fingerprint: chrome
-  reality-opts:
-    public-key: i4Mx_tDND0Xxac3WyA7HgT9rvXdZlXpm5m1EGiQF-Uk
-    short-id: b8aa
-  ws-opts:
-    path: /#俄罗斯 V2CROSS.COM
-    headers:
-      Host: yahoo.com
-  headerType: none
-- name: VLESS-zzhk5.ainivp.com:13414
+  skip-cert-verify: true
+- name: '%E6%8D%B7%E5%85%8B+V2CROSS.COM'
   type: vless
-  server: zzhk5.ainivp.com
-  port: 13414
-  uuid: 9204afcd-026e-781f-1abc-c03efabd1344
-  udp: true
+  server: 95.85.228.146
+  port: 8443
+  uuid: a67e3045-626c-42c9-8cc0-a5afa6b18b05
   network: tcp
   tls: true
-  servername: www.microsoft.com
+  servername: io.ozone.ru
   flow: xtls-rprx-vision
   client-fingerprint: chrome
-  reality-opts:
-    public-key: epgveXEcUs0sbs4jV_1KldTkZGnWUHfMKcs0XNyP41Y
-    short-id: a1b2c3d4
-  encryption: none#香港 特别行政区
-- name: VLESS-148.253.211.237:443
-  type: vless
-  server: 148.253.211.237
-  port: 443
-  uuid: 980231fb-4372-5c81-b696-20aa34d33af0
-  udp: true
-  network: tcp
-  tls: true
-  servername: www.microsoft.com
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 978-Yxgtd3AWTVfiXEQqCstdwrT1qgsgleGPIRGQDl8#英国 V2CROSS.COM
-    short-id: bdac121c7debdaba
-  packet-encoding: none
+  skip-cert-verify: true
+- name: '%E7%BE%8E%E5%9B%BD+V2CROSS.COM'
+  type: ss
+  server: 149.28.255.6
+  port: 816
+  password: GyZ5Xo0ht41vYmW3H4
+  cipher: chacha20-ietf-poly1305
 - name: 亚太地区 V2CROSS.COM
   type: vmess
-  server: yd3.ainivp.com
-  port: 33407
-  uuid: 9204afcd-026e-781f-1abc-c03efabd1344
+  server: dotu-krv1.kunlun03dns.com
+  port: 11144
+  uuid: 6b989fce-172e-37a6-b324-3922008b17f9
   alterId: 0
   cipher: auto
-  udp: true
+  network: tcp
+  skip-cert-verify: true
+- name: '%E7%BE%8E%E5%9B%BD+CloudFlare%E8%8A%82%E7%82%B9'
+  type: trojan
+  server: 22b.net
+  port: 2087
+  password: trojan
   network: ws
+  sni: store.timimi.dpdns.org
   tls: true
-  servername: yd3.ainivp.com
   ws-opts:
-    headers:
-      Host: yd3.ainivp.com
-    path: /ray
-  security: auto
+    path: '%2F%3FBIA_TELEGRAM%20%28%40AZARBAYJAB1%29%20TM%20%28%40AZARBAYJAB1%29%20TM%20%28%40AZARBAYJAB1%29%20TM%20%28%40AZARBAYJAB1%29%20TM%20%28%40AZARBAYJAB1%29%20TM%20%28%40AZARBAYJAB1%29'
+  skip-cert-verify: true
+- name: 亚太地区 V2CROSS.COM
+  type: vmess
+  server: dotu-sgv1.kunlun03dns.com
+  port: 11135
+  uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
 - name: 美国 V2CROSS.COM
   type: vmess
   server: gtm-sg-cc54q7d1q01.365cloud0285.com
@@ -459,42 +376,55 @@ proxies:
   uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
   alterId: 0
   cipher: auto
-  udp: true
-  security: auto
-- name: 美国 V2CROSS.COM
-  type: vmess
-  server: gtm-sg-cc54q7d1q01.365cloud0285.com
-  port: 6004
-  uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-  alterId: 0
-  cipher: auto
-  udp: true
-  network: raw
-  security: auto
-- name: VLESS-178.215.238.148:8443
-  type: vless
-  server: 178.215.238.148
-  port: 8443
-  uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
-  udp: true
-  network: raw#乌克兰 V2CROSS.COM
-  tls: true
-  servername: eh.vk.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU
-    short-id: 478dc6
-  encryption: none
-  headerType: none
+  network: tcp
+  skip-cert-verify: true
 - name: 亚太地区 V2CROSS.COM
   type: vmess
-  server: 103.181.164.145
-  port: 51556
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  server: dotu-sgv1.kunlun03dns.com
+  port: 11137
+  uuid: 6b989fce-172e-37a6-b324-3922008b17f9
   alterId: 0
   cipher: auto
-  udp: true
-  security: auto
+  network: tcp
+  skip-cert-verify: true
+- name: 亚太地区 V2CROSS.COM
+  type: vmess
+  server: dotu-jpv1.kunlun03dns.com
+  port: 11121
+  uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
+- name: '%E8%8B%B1%E5%9B%BD+V2CROSS.COM'
+  type: vless
+  server: swe-8t.freeonline.pro
+  port: 443
+  uuid: 980231fb-4372-5c81-b696-20aa34d33af0
+  network: tcp
+  tls: true
+  servername: www.microsoft.com
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  skip-cert-verify: true
+- name: 亚太地区 V2CROSS.COM
+  type: vmess
+  server: dotu-usv1.kunlun03dns.com
+  port: 11127
+  uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
+- name: 亚太地区 V2CROSS.COM
+  type: vmess
+  server: dotu-usv1.kunlun03dns.com
+  port: 11128
+  uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
 - name: 亚太地区 V2CROSS.COM
   type: vmess
   server: dotu-jpv1.kunlun03dns.com
@@ -502,45 +432,25 @@ proxies:
   uuid: 6b989fce-172e-37a6-b324-3922008b17f9
   alterId: 0
   cipher: auto
-  udp: true
-  security: auto
-- name: 亚太地区 V2CROSS.COM
-  type: vmess
-  server: dotu-twv1.kunlun03dns.com
-  port: 11113
-  uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-  alterId: 0
-  cipher: auto
-  udp: true
-  security: auto
-- name: 美国+V2CROSS.COM
-  type: ss
-  server: 149.28.255.6
-  port: 816
-  password: GyZ5Xo0ht41vYmW3H4
-  cipher: chacha20-ietf-poly1305
-  udp: true
-- name: VLESS-152.53.224.29:7443
+  network: tcp
+  skip-cert-verify: true
+- name: '%E8%8B%B1%E5%9B%BD+South+Cheshire+College'
   type: vless
-  server: 152.53.224.29
-  port: 7443
-  uuid: 4350fd8e-9f5d-47e7-a5f6-6161e0f7db9b
-  udp: true
+  server: 194.238.57.104
+  port: 443
+  uuid: 8046e3a1-83a7-4155-86e4-374153fe66f3
   network: tcp
   tls: true
-  servername: stackoverflow.com
+  servername: www.icloud.com
   flow: xtls-rprx-vision
   client-fingerprint: chrome
-  reality-opts:
-    public-key: 5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI
-    short-id: be0ce047
-  encryption: none#美国 V2CROSS.COM
-- name: 亚太地区 V2CROSS.COM
-  type: vmess
-  server: dotu-twv1.kunlun03dns.com
-  port: 11112
-  uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-  alterId: 0
-  cipher: auto
-  udp: true
-  security: auto
+  skip-cert-verify: true
+- name: '%E5%8F%B0%E6%B9%BE%E7%9C%81+V2CROSS.COM'
+  type: trojan
+  server: 211.76.176.98
+  port: 19128
+  password: gcuCpQfaiVeDBdWG
+  network: tcp
+  sni: yazhou10.dynu.net
+  tls: true
+  skip-cert-verify: true
