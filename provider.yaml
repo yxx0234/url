@@ -1,11 +1,11 @@
 proxies:
-- name: SS-加拿大>英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000
+- name: SS-加拿大\u003e英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000
   type: ss
   server: 144.217.164.29
   port: 12000
   password: 8JCsPssfgS8tiRwiMlhARg==
   cipher: aes-256-gcm
-- name: VMESS-未知>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080
+- name: VMESS-未知\u003e德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080
   type: vmess
   server: 547.rtxconfigz.shop
   port: 8080
@@ -14,14 +14,12 @@ proxies:
   cipher: auto
   network: ws
   servername: node4.rtxconfigz.com
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /@Malinda6104
     headers:
       HOST: node4.rtxconfigz.com
-- name: VMESS-美国>日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443
+- name: VMESS-美国\u003e日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443
   type: vmess
   server: t1.620720.xyz
   port: 8443
@@ -29,8 +27,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
@@ -57,8 +53,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /IOebhLMhl1CTbFHbL95myfRX2
@@ -76,8 +70,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /test
@@ -96,8 +88,6 @@ proxies:
   cipher: auto
   network: ws
   servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /IOebhLMhl1CTbFHbL95myfRX2
@@ -143,8 +133,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /vmessws
@@ -164,8 +152,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /
@@ -186,14 +172,12 @@ proxies:
   cipher: auto
   network: ws
   servername: cg1c07.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
   tls: true
   ws-opts:
     path: /api/v1/graphql
     headers:
       Host: cg1c07.waimaojd.com
-- name: VMESS-美国>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-support.zoom.us:8080
+- name: VMESS-美国\u003e德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-support.zoom.us:8080
   type: vmess
   server: support.zoom.us
   port: 8080
@@ -202,8 +186,6 @@ proxies:
   cipher: auto
   network: ws
   servername: node4.rtxconfigz.com
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /@Malinda6104
@@ -217,14 +199,12 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /vmessws
     headers:
       Host: 209.126.84.189
-- name: VMESS-未知>澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443
+- name: VMESS-未知\u003e澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443
   type: vmess
   server: sy4.620720.xyz
   port: 443
@@ -232,15 +212,13 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
     path: /
     headers:
       Host: sy4.620720.xyz
-- name: VMESS-未知>美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083
+- name: VMESS-未知\u003e美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083
   type: vmess
   server: hgtrojan.zabc.net
   port: 2083
@@ -249,8 +227,6 @@ proxies:
   cipher: auto
   network: ws
   servername: hgtrojan.zabc.net
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
@@ -272,8 +248,6 @@ proxies:
   cipher: auto
   network: ws
   servername: cg1c01.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
   tls: true
   ws-opts:
     path: /api/v1/graphql
@@ -288,8 +262,6 @@ proxies:
   cipher: auto
   network: ws
   servername: cg1c04.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
@@ -305,67 +277,92 @@ proxies:
   cipher: auto
   network: ws
   servername: cg1c14.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
     path: /api/v1/graphql
     headers:
       HOST: cg1c14.waimaojd.com
-- name: 美国+CloudFlare节点
+- name: 英国 V2CROSS.COM
+  type: vmess
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
+- name: 美国 V2CROSS.COM
+  type: vmess
+  server: gtm-sg-cc54q7d1q01.365cloud0285.com
+  port: 6001
+  uuid: a030842a-d29a-4ea9-a766-14fc4b9e102d
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
+- name: 俄罗斯+V2CROSS.COM
   type: vless
-  server: 172.65.111.43
-  port: 22
-  uuid: monacoVPN
-  network: tcp
-  servername: ''
-  client-fingerprint: chrome
-  flow: ''
-  skip-cert-verify: false
-  reality-opts: {}
-  packet-addr: false
-- name: 美国+Akamai科技公司CDN网络节点
-  type: trojan
-  server: 172.235.63.252
-  port: 443
-  password: bX_lNHWoW6ywq82mI=KUr+8i__VSp0Hs_E
-  network: tcp
-  sni: 172.235.63.252
-  udp: true
+  server: 85.234.114.53
+  port: 22231
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  flow: xtls-rprx-vision
   tls: true
-  skip-cert-verify: false
+  servername: r1.mizulina.top
+  skip-cert-verify: true
+- name: 台湾省新北市+中华电信
+  type: ss
+  server: r3mrcg001286ek2.cybervena.com
+  port: 50099
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  cipher: chacha20-ietf-poly1305
+- name: 克罗地亚+V2CROSS.COM
+  type: vless
+  server: cdn9-33.vk-cdnvideo.com
+  port: 8443
+  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
+  tls: true
+  network: tcp
+  encryption: none
+  skip-cert-verify: true
 - name: 美国+V2CROSS.COM
   type: ss
   server: 149.104.109.74
   port: 21273
-  cipher: chacha20-ietf-poly1305
   password: Ll6cYfXM5DzQbdtMMb72A_jqVnNljU3yqe
-  plugin: ''
-  plugin-opts: {}
-- name: 美国+科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+  cipher: chacha20-ietf-poly1305
+- name: 亚太地区 V2CROSS.COM
+  type: vmess
+  server: 103.181.164.145
+  port: 54022
+  uuid: 418048af-a293-4b99-8b0c-98ca3580dd24
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
+- name: 西班牙+V2CROSS.COM
   type: trojan
-  server: 130.94.97.11
-  port: 443
-  password: Z3_=ewk_+l1U4OT4usQ5=o2vFfk95yfy1V
-  network: tcp
-  sni: www.selectnet.click
-  udp: true
+  server: 109.234.211.66
+  port: 8443
+  password: trojan
+  sni: store.timimi.dpdns.org
   tls: true
-  skip-cert-verify: false
-- name: 俄罗斯+V2CROSS.COM
-  type: vless
-  server: 194.226.169.36
-  port: 443
-  uuid: 4706d9c3-eec0-4666-9d84-e608a200e872
-  network: tcp
-  servername: yahoo.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: store.timimi.dpdns.org
   client-fingerprint: chrome
+  skip-cert-verify: true
+- name: 德国+黑森州法兰克福Linode数据中心
+  type: trojan
+  server: 172.104.237.100
+  port: 443
+  password: VPTFm=oZ++SuNT+jMRqGZqrAnWq-r8KJyY
+  sni: 172.104.237.100
   tls: true
-  flow: ''
-  skip-cert-verify: false
-  reality-opts: {}
-  packet-addr: false
+  network: tcp
+  skip-cert-verify: true
 - name: 英国 V2CROSS.COM
   type: vmess
   server: 82.198.246.250
@@ -374,63 +371,28 @@ proxies:
   alterId: 0
   cipher: auto
   network: tcp
-- name: 美国 CloudFlare节点
+  skip-cert-verify: true
+- name: 美国+V2CROSS.COM
+  type: vless
+  server: 144.31.135.162
+  port: 9443
+  uuid: b54d36d1-43c3-4b8f-a5f8-cf6504db0562
+  flow: xtls-rprx-vision
+  tls: true
+  reality-opts:
+    public-key: MbYR2O0XBSeG74gGYpFIofXsILcf5lG2gc36GyURBXQ
+    short-id: 0199436dd359351b
+  servername: apple.com
+  client-fingerprint: chrome
+  network: tcp
+  encryption: none
+  skip-cert-verify: true
+- name: 英国 V2CROSS.COM
   type: vmess
-  server: yg7.ygkkk.dpdns.org
-  port: 8443
-  uuid: c1a8dee0-bdad-4b6d-9926-5e15c3c8ed7d
+  server: 82.198.246.214
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
-  network: ws
-  ws-opts:
-    path: /c1a8dee0-bdad-4b6d-9926-5e15c3c8ed7d-vm
-    headers:
-      Host: marco-visibility-tops-estimate.trycloudflare.com
-  tls: true
-  servername: marco-visibility-tops-estimate.trycloudflare.com
+  network: tcp
   skip-cert-verify: true
-- name: 美国+Akamai科技公司CDN网络节点
-  type: trojan
-  server: 172.236.220.10
-  port: 443
-  password: s_WEN9lMmufG+qDIsn-4C7JOVAnDdbS3Ui
-  network: tcp
-  sni: ''
-  udp: true
-  tls: true
-  skip-cert-verify: false
-- name: 英国+V2CROSS.COM
-  type: vless
-  server: riga-node.datamove.online
-  port: 2040
-  uuid: 17451fec-af94-4715-8c2f-7f6839130d0a
-  network: tcp
-  servername: tradingview.com
-  client-fingerprint: chrome
-  tls: true
-  flow: ''
-  skip-cert-verify: false
-  reality-opts: {}
-  packet-addr: false
-- name: 亚太地区 V2CROSS.COM
-  type: vmess
-  server: 103.181.164.145
-  port: 54022
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  network: tcp
-- name: 美国+RF+Engineering
-  type: trojan
-  server: 141.193.213.11
-  port: 443
-  password: humanity
-  network: ws
-  sni: www.calmloud.com
-  udp: true
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmloud.com
-  tls: true
-  skip-cert-verify: false
