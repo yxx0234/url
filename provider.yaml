@@ -313,123 +313,51 @@ proxies:
     path: /api/v1/graphql
     headers:
       HOST: cg1c14.waimaojd.com
-- name: 美国+CloudFlare节点
-  type: vless
-  server: 162.159.60.231
+- name: Trojan-德国+V2CROSS.COM
+  type: trojan
+  server: 91.233.8.138
   port: 443
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  encryption: none
-  flow: ''
+  password: qDVh0NalwefxyZlHh3Ni2JSlhErcuC3Wiq
+  udp: true
+  sni: www.homelywebs.click
   tls: true
-  sni: hhlfy.twiladaphne.ndjp.net
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-- name: 广东省+珠江宽频
+- name: VLESS-俄罗斯+V2CROSS.COM
   type: vless
-  server: 122.8.44.3
-  port: 993
-  uuid: 2703cda8-5cf4-019d-c4bd-6cf0c2261946
-  encryption: none
+  server: r1.mizulina.top
+  port: 22231
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  udp: true
   flow: xtls-rprx-vision
   tls: true
-  servername: dl.google.com
-  reality-opts:
-    public-key: UvQ2HZFkQXrBiaprbcmks-aFo1dvnfPlHXcUKcl-i04
-    short-id: ''
-- name: 美国+CloudFlare节点
-  type: vless
-  server: 172.64.32.75
-  port: 443
-  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
-  encryption: none
-  flow: ''
-  tls: true
-  sni: octopusss4.com
-  network: ws
-  ws-opts:
-    path: /tsghdws
-    headers:
-      Host: octopusss4.com
-- name: 伊朗 V2CROSS.COM
-  type: vmess
-  server: nlt.reata.ir
-  port: 1020
-  uuid: 6244c41a-f4c1-4733-a654-c38f7729b13c
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: 巴西圣保罗+CloudFlare节点
-  type: trojan
-  server: 188.114.96.4
-  port: 443
-  password: humanity
-  sni: www.calmloud.com
-  tls: true
-  network: ws
-  ws-opts:
-    path: /assignment
-- name: 美国+德克萨斯州达拉斯Linode数据中心
-  type: trojan
-  server: 45.79.8.17
-  port: 443
-  password: rXyShM8Jni+5Sbq3k4gkyr5Lq0zOMRL2Uf
-  sni: 45.79.8.17
-  tls: true
-- name: 英国 V2CROSS.COM
-  type: vmess
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  network: tcp
-- name: 美国+CloudFlare节点
-  type: trojan
-  server: 104.21.40.34
-  port: 443
-  password: humanity
-  sni: www.gossipglove.com
-  tls: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.gossipglove.com
-- name: 美国+Amazon+EC2服务器
+  servername: r1.mizulina.top
+  client-fingerprint: edge
+- name: Hysteria2-美国+Amazon+EC2服务器
   type: hysteria2
   server: vpn-de-002.fastervpn.world
   port: 443
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  udp: true
   sni: vpn-de-002.fastervpn.world
   skip-cert-verify: true
-- name: 美国+加利福尼亚
-  type: trojan
-  server: 64.176.65.85
-  port: 443
-  password: iGccGWTMHtoXtBhGYK4mogg7iIUhGbcvCf
-  sni: ''
+- name: VLESS-广东省+珠江宽频
+  type: vless
+  server: 122.8.44.3
+  port: 993
+  uuid: 2703cda8-5cf4-019d-c4bd-6cf0c2261946
+  udp: true
+  flow: xtls-rprx-vision
   tls: true
-- name: 俄罗斯+V2CROSS.COM
+  reality-opts:
+    public-key: UvQ2HZFkQXrBiaprbcmks-aFo1dvnfPlHXcUKcl-i04
+  servername: dl.google.com
+  client-fingerprint: chrome
+- name: VLESS-俄罗斯+V2CROSS.COM
   type: vless
   server: 85.234.114.53
   port: 22231
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  encryption: none
+  udp: true
   flow: xtls-rprx-vision
   tls: true
-  sni: r1.mizulina.top
-- name: 美国+CloudFlare节点
-  type: trojan
-  server: 104.18.152.219
-  port: 443
-  password: humanity
-  sni: www.ignitelimit.com
-  tls: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
+  servername: r1.mizulina.top
+  client-fingerprint: chrome
