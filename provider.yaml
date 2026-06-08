@@ -313,42 +313,41 @@ proxies:
     path: /api/v1/graphql
     headers:
       HOST: cg1c14.waimaojd.com
+- name: 罗马尼亚+V2CROSS.COM
+  type: trojan
+  server: 185.137.157.254
+  port: 443
+  password: hxn2jK9Uzezogua0oHuq9Y8viN=UCe.2Jd
+  sni: www.directorypipeline.click
+  skip-cert-verify: true
+- name: 德国+V2CROSS.COM
+  type: trojan
+  server: 91.233.8.25
+  port: 443
+  password: I1vtf6pjYsAu-nFnraWAMjKTy90AHitdAz
+  sni: fra34.tracker-ws.click
+  skip-cert-verify: true
 - name: 俄罗斯+V2CROSS.COM
   type: vless
   server: 85.234.114.53
-  port: 443
+  port: 22231
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
   tls: true
+  sni: r1.mizulina.top
   servername: r1.mizulina.top
+  skip-cert-verify: true
+  client-fingerprint: edge
+  flow: xtls-rprx-vision
 - name: 俄罗斯+V2CROSS.COM
   type: vless
   server: r1.mizulina.top
   port: 22231
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
   network: tcp
-  skip-cert-verify: true
-  flow: xtls-rprx-vision
   tls: true
+  sni: r1.mizulina.top
   servername: r1.mizulina.top
-- name: 伊朗 V2CROSS.COM
-  type: vmess
-  server: nlt.reata.ir
-  port: 1020
-  uuid: 6244c41a-f4c1-4733-a654-c38f7729b13c
-  alterId: 0
-  cipher: auto
-  network: tcp
   skip-cert-verify: true
-- name: 俍罗斯+V2CROSS.COM
-  type: vless
-  server: 217.149.25.106
-  port: 443
-  uuid: 029a4bc6-4557-4b6b-a5fc-6232e943e43b
-  network: tcp
-  skip-cert-verify: true
+  client-fingerprint: edge
   flow: xtls-rprx-vision
-  tls: true
-  servername: ai.sellflow.org
