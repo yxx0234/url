@@ -313,51 +313,42 @@ proxies:
     path: /api/v1/graphql
     headers:
       HOST: cg1c14.waimaojd.com
-- name: Trojan-德国+V2CROSS.COM
-  type: trojan
-  server: 91.233.8.138
+- name: 俄罗斯+V2CROSS.COM
+  type: vless
+  server: 85.234.114.53
   port: 443
-  password: qDVh0NalwefxyZlHh3Ni2JSlhErcuC3Wiq
-  udp: true
-  sni: www.homelywebs.click
+  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+  network: tcp
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
   tls: true
-- name: VLESS-俄罗斯+V2CROSS.COM
+  servername: r1.mizulina.top
+- name: 俄罗斯+V2CROSS.COM
   type: vless
   server: r1.mizulina.top
   port: 22231
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: r1.mizulina.top
-  client-fingerprint: edge
-- name: Hysteria2-美国+Amazon+EC2服务器
-  type: hysteria2
-  server: vpn-de-002.fastervpn.world
-  port: 443
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  udp: true
-  sni: vpn-de-002.fastervpn.world
+  network: tcp
   skip-cert-verify: true
-- name: VLESS-广东省+珠江宽频
-  type: vless
-  server: 122.8.44.3
-  port: 993
-  uuid: 2703cda8-5cf4-019d-c4bd-6cf0c2261946
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: UvQ2HZFkQXrBiaprbcmks-aFo1dvnfPlHXcUKcl-i04
-  servername: dl.google.com
-  client-fingerprint: chrome
-- name: VLESS-俄罗斯+V2CROSS.COM
-  type: vless
-  server: 85.234.114.53
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  udp: true
   flow: xtls-rprx-vision
   tls: true
   servername: r1.mizulina.top
-  client-fingerprint: chrome
+- name: 伊朗 V2CROSS.COM
+  type: vmess
+  server: nlt.reata.ir
+  port: 1020
+  uuid: 6244c41a-f4c1-4733-a654-c38f7729b13c
+  alterId: 0
+  cipher: auto
+  network: tcp
+  skip-cert-verify: true
+- name: 俍罗斯+V2CROSS.COM
+  type: vless
+  server: 217.149.25.106
+  port: 443
+  uuid: 029a4bc6-4557-4b6b-a5fc-6232e943e43b
+  network: tcp
+  skip-cert-verify: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: ai.sellflow.org
