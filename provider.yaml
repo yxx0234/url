@@ -14,8 +14,6 @@ proxies:
   cipher: auto
   network: ws
   servername: node4.rtxconfigz.com
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /@Malinda6104
@@ -29,8 +27,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
@@ -57,8 +53,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /IOebhLMhl1CTbFHbL95myfRX2
@@ -76,8 +70,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /test
@@ -96,8 +88,6 @@ proxies:
   cipher: auto
   network: ws
   servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /IOebhLMhl1CTbFHbL95myfRX2
@@ -143,8 +133,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /vmessws
@@ -164,8 +152,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /
@@ -186,8 +172,6 @@ proxies:
   cipher: auto
   network: ws
   servername: cg1c07.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
   tls: true
   ws-opts:
     path: /api/v1/graphql
@@ -202,8 +186,6 @@ proxies:
   cipher: auto
   network: ws
   servername: node4.rtxconfigz.com
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /@Malinda6104
@@ -217,8 +199,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   skip-cert-verify: true
   ws-opts:
     path: /vmessws
@@ -232,8 +212,6 @@ proxies:
   alterId: 0
   cipher: auto
   network: ws
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
@@ -249,8 +227,6 @@ proxies:
   cipher: auto
   network: ws
   servername: hgtrojan.zabc.net
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
@@ -272,8 +248,6 @@ proxies:
   cipher: auto
   network: ws
   servername: cg1c01.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
   tls: true
   ws-opts:
     path: /api/v1/graphql
@@ -288,8 +262,6 @@ proxies:
   cipher: auto
   network: ws
   servername: cg1c04.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
@@ -305,28 +277,49 @@ proxies:
   cipher: auto
   network: ws
   servername: cg1c14.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
   tls: true
   skip-cert-verify: true
   ws-opts:
     path: /api/v1/graphql
     headers:
       HOST: cg1c14.waimaojd.com
-- name: 罗马尼亚+V2CROSS.COM
-  type: trojan
-  server: 185.137.157.254
-  port: 443
-  password: hxn2jK9Uzezogua0oHuq9Y8viN=UCe.2Jd
-  sni: www.directorypipeline.click
+- name: 美国+CloudFlare节点
+  type: vless
+  server: fans.liverpool.qzz.io
+  port: 2083
+  uuid: 2b8738de-1af5-4267-b101-c05707769ed4
+  network: ws
+  tls: true
+  servername: FANs.LIVeRPOol.QZz.IO
+  ws-opts:
+    path: /eyJqdW5rIjoiY0Y0cENQUmxsNyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560
+    headers:
+      Host: fans.liverpool.qzz.io
   skip-cert-verify: true
-- name: 德国+V2CROSS.COM
-  type: trojan
-  server: 91.233.8.25
+  encryption: none
+- name: 英国+V2CROSS.COM
+  type: vless
+  server: 31.76.91.33
   port: 443
-  password: I1vtf6pjYsAu-nFnraWAMjKTy90AHitdAz
-  sni: fra34.tracker-ws.click
+  uuid: dfc0cb9d-f005-41b0-848c-7703bd39d0de
+  network: tcp
+  tls: true
+  servername: jp.s3-cloud.org
   skip-cert-verify: true
+  flow: xtls-rprx-vision
+  encryption: none
+- name: 美国+CloudFlare节点
+  type: vless
+  server: 104.21.46.101
+  port: 2086
+  uuid: 4a956dfd-b65a-4846-b6da-c85fc79918a5
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoibW81VDZwNXg5S2IiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyNjAyOmZjNTk6YjA6NjQ6Ol0iXX0=?ed=2560
+    headers:
+      Host: green-scene-32df.atalastchance.workers.dev
+  skip-cert-verify: true
+  encryption: none
 - name: 俄罗斯+V2CROSS.COM
   type: vless
   server: 85.234.114.53
@@ -334,20 +327,51 @@ proxies:
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
   network: tcp
   tls: true
-  sni: r1.mizulina.top
   servername: r1.mizulina.top
   skip-cert-verify: true
-  client-fingerprint: edge
   flow: xtls-rprx-vision
+  encryption: none
+- name: 台湾省台北市+中华电信
+  type: ss
+  server: r3mrcg001286ek2.cybervena.com
+  port: 50099
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  cipher: chacha20-ietf-poly1305
+- name: 美国+CloudFlare节点
+  type: vless
+  server: 172.64.146.138
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
+  network: ws
+  tls: true
+  servername: octopusss4.com
+  ws-opts:
+    path: /tsghdws
+    headers:
+      Host: octopusss4.com
+  skip-cert-verify: true
+  encryption: none
+- name: 美国+CloudFlare节点
+  type: trojan
+  server: www.creationlong.org
+  port: 443
+  password: humanity
+  network: ws
+  tls: true
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.creationlong.org
+  skip-cert-verify: true
+  encryption: none
 - name: 俄罗斯+V2CROSS.COM
   type: vless
-  server: r1.mizulina.top
-  port: 22231
+  server: 85.234.114.53
+  port: 443
   uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
   network: tcp
   tls: true
-  sni: r1.mizulina.top
   servername: r1.mizulina.top
   skip-cert-verify: true
-  client-fingerprint: edge
   flow: xtls-rprx-vision
+  encryption: none
