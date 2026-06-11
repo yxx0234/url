@@ -1,406 +1,461 @@
 proxies:
-- name: SS-加拿大>英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000
-  type: ss
-  server: 144.217.164.29
-  port: 12000
-  password: 8JCsPssfgS8tiRwiMlhARg==
-  cipher: aes-256-gcm
-- name: VMESS-未知>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080
-  type: vmess
-  server: 547.rtxconfigz.shop
-  port: 8080
-  uuid: 44e57485-eccc-46ef-808f-cd17ac810018
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: node4.rtxconfigz.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /@Malinda6104
-    headers:
-      HOST: node4.rtxconfigz.com
-- name: VMESS-美国>日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443
-  type: vmess
-  server: t1.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: t1.620720.xyz
-- name: SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990
-  type: ss
-  server: 45.154.204.7
-  port: 990
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-  cipher: chacha20-ietf-poly1305
-- name: SS-英国-NF解锁自制剧-ChatGPT-TikTok-146.19.49.251:443
-  type: ss
-  server: 146.19.49.251
-  port: 443
-  password: ODfxioK0VkKxTdpVQJ4rv8HglAu0vzv6
-  cipher: chacha20-ietf-poly1305
-- name: VMESS-加拿大-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-15.235.41.200:80
-  type: vmess
-  server: 15.235.41.200
-  port: 80
-  uuid: 58fe1542-5290-40ad-815a-77707a81afe5
-  alterId: 0
-  cipher: auto
-  network: ws
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /IOebhLMhl1CTbFHbL95myfRX2
-- name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-71.19.148.143:443
-  type: ss
-  server: 71.19.148.143
-  port: 443
-  password: p78naCf2EfOlRSLTX0wFVx
-  cipher: chacha20-ietf-poly1305
-- name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-38.92.10.226:45979
-  type: vmess
-  server: 38.92.10.226
-  port: 45979
-  uuid: 23bdf6df-c482-46d0-c0f4-5a98d534ea11
-  alterId: 0
-  cipher: auto
-  network: ws
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /test
-- name: SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990
-  type: ss
-  server: 23.95.76.59
-  port: 990
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-  cipher: chacha20-ietf-poly1305
-- name: VMESS-加拿大-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-51.79.102.253:80
-  type: vmess
-  server: 51.79.102.253
-  port: 80
-  uuid: 58fe1542-5290-40ad-815a-77707a81afe5
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /IOebhLMhl1CTbFHbL95myfRX2
-    headers:
-      HOST: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-- name: SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-  type: ssr
-  server: 107.151.182.253
-  port: 8080
-  password: 14fFPrbezE3HDZzsMOr6
-  cipher: rc4-md5
-  protocol: origin
-  obfs: plain
-- name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-92.118.112.101:9483
-  type: ss
-  server: 92.118.112.101
-  port: 9483
-  password: qFvn2fNEvBgM5knffrN96q
-  cipher: chacha20-ietf-poly1305
-- name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-15.204.247.49:12000
-  type: ss
-  server: 15.204.247.49
-  port: 12000
-  password: 8JCsPssfgS8tiRwiMlhARg==
-  cipher: aes-256-gcm
-- name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-pupas-shirting-unsung.freesocks.work:443
-  type: ss
-  server: pupas-shirting-unsung.freesocks.work
-  port: 443
-  password: p78naCf2EfOlRSLTX0wFVx
-  cipher: chacha20-ietf-poly1305
-- name: SS-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:990
-  type: ss
-  server: 79.127.233.170
-  port: 990
-  password: f8f7aCzcPKbsF8p3
-  cipher: chacha20-ietf-poly1305
-- name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-v2ray.codefyinc.com:443
-  type: vmess
-  server: v2ray.codefyinc.com
-  port: 443
-  uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
-  alterId: 0
-  cipher: auto
-  network: ws
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /vmessws
-    headers:
-      Host: v2ray.codefyinc.com
-- name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-23.95.75.146:443
-  type: ss
-  server: 23.95.75.146
-  port: 443
-  password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
-  cipher: chacha20-ietf-poly1305
-- name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-198.23.174.168:20086
-  type: vmess
-  server: 198.23.174.168
-  port: 20086
-  uuid: 2b36304b-4f88-4ff5-9033-f4d57dbb5490
-  alterId: 0
-  cipher: auto
-  network: ws
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-- name: SSR-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:989
-  type: ssr
-  server: 79.127.233.170
-  port: 989
-  password: f8f7aCzcPKbsF8p3
-  cipher: aes-256-cfb
-  protocol: origin
-  obfs: plain
-- name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c07.waimaojd.com:443
-  type: vmess
-  server: cg1c07.waimaojd.com
-  port: 443
-  uuid: be8e3136-b874-4085-bd23-ec3699300490
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: cg1c07.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  ws-opts:
-    path: /api/v1/graphql
-    headers:
-      Host: cg1c07.waimaojd.com
-- name: VMESS-美国>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-support.zoom.us:8080
-  type: vmess
-  server: support.zoom.us
-  port: 8080
-  uuid: 44e57485-eccc-46ef-808f-cd17ac810018
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: node4.rtxconfigz.com
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /@Malinda6104
-    headers:
-      HOST: node4.rtxconfigz.com
-- name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-209.126.84.189:443
-  type: vmess
-  server: 209.126.84.189
-  port: 443
-  uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
-  alterId: 0
-  cipher: auto
-  network: ws
-  http-opts: {}
-  h2-opts: {}
-  skip-cert-verify: true
-  ws-opts:
-    path: /vmessws
-    headers:
-      Host: 209.126.84.189
-- name: VMESS-未知>澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443
-  type: vmess
-  server: sy4.620720.xyz
-  port: 443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
-  alterId: 0
-  cipher: auto
-  network: ws
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /
-    headers:
-      Host: sy4.620720.xyz
-- name: VMESS-未知>美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083
-  type: vmess
-  server: hgtrojan.zabc.net
-  port: 2083
-  uuid: e6395c20-4571-4b34-d6b1-55a5d36e49ea
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: hgtrojan.zabc.net
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /e6395c20
-    headers:
-      HOST: hgtrojan.zabc.net
-- name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.175.87.207:10011
-  type: ss
-  server: 107.175.87.207
-  port: 10011
-  password: 86039b71-ba82-4ca8-838e-87086ae666de
-  cipher: chacha20-ietf-poly1305
-- name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c01.waimaojd.com:443
-  type: vmess
-  server: cg1c01.waimaojd.com
-  port: 443
-  uuid: be8e3136-b874-4085-bd23-ec3699300490
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: cg1c01.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  ws-opts:
-    path: /api/v1/graphql
-    headers:
-      Host: cg1c01.waimaojd.com
-- name: VMESS-美国-ChatGPT-TikTok-YouTube-cg1c04.waimaojd.com:443
-  type: vmess
-  server: cg1c04.waimaojd.com
-  port: 443
-  uuid: be8e3136-b874-4085-bd23-ec3699300490
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: cg1c04.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /api/v1/graphql
-    headers:
-      HOST: cg1c04.waimaojd.com
-- name: VMESS-美国-ChatGPT-TikTok-YouTube-cg1c14.waimaojd.com:443
-  type: vmess
-  server: cg1c14.waimaojd.com
-  port: 443
-  uuid: be8e3136-b874-4085-bd23-ec3699300490
-  alterId: 0
-  cipher: auto
-  network: ws
-  servername: cg1c14.waimaojd.com
-  http-opts: {}
-  h2-opts: {}
-  tls: true
-  skip-cert-verify: true
-  ws-opts:
-    path: /api/v1/graphql
-    headers:
-      HOST: cg1c14.waimaojd.com
-- name: 美国+CloudFlare节点
-  type: trojan
-  server: www.gossipglove.com
-  port: 443
-  password: humanity
-  sni: www.gossipglove.com
-  network: ws
-  ws-opts:
-    path: /assignment
-- name: 美国+德克萨斯州达拉斯Linode数据中心
-  type: trojan
-  server: 45.79.8.17
-  port: 443
-  password: rXyShM8Jni+5Sbq3k4gkyr5Lq0zOMRL2Uf
-  sni: 45.79.8.17
-- name: 美国+Fastly全球Anycast节点
-  type: vless
-  server: 151.101.0.1
-  port: 80
-  uuid: /0058c215-ab1e-400c-a403-b5b2fda7e846
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: max-gb1.global.ssl.fastly.net
-- name: 美国+CloudFlare节点
-  type: vless
-  server: 104.17.121.71
-  port: 443
-  uuid: /fc965ad9-bdd7-4815-ad71-b39ec5972dc1
-  tls: true
-  servername: octopusss4.com
-  network: ws
-  ws-opts:
-    path: /tsghdws
-    headers:
-      Host: octopusss4.com
-- name: 美国+Fastly全球Anycast节点
-  type: vless
-  server: 151.101.66.219
-  port: 80
-  uuid: /0058c215-ab1e-400c-a403-b5b2fda7e846
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: max-gb1.global.ssl.fastly.net
-- name: 西班牙+V2CROSS.COM
-  type: trojan
-  server: 185.18.250.245
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: 美国+CloudFlare节点
-  type: trojan
-  server: 172.64.147.24
-  port: 443
-  password: humanity
-  sni: www.gossipglove.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.gossipglove.com
-- name: 英国+V2CROSS.COM
-  type: vless
-  server: 195.184.247.137
-  port: 443
-  uuid: /8bbf020e-653f-4a82-9900-1214e4e37dab
-  tls: true
-  servername: www.microsoft.com
-  reality-opts:
-    public-key: gXc2c9NIWxhUTb7HoBCjvo-uB1L4iQj4TH38g4YhxHE
-    short-id: fcd9787f
-  network: tcp
-  flow: xtls-rprx-vision
-- name: 美国+V2CROSS.COM
-  type: vless
-  server: 199.232.197.131
-  port: 80
-  uuid: /cabbfe13-038b-4dbb-9c45-5079c829abfa
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: max-gb1.global.ssl.fastly.net
+  - name: "SS-å\x8A æ\x8B¿å¤§>è\x8B±å\x9B½-NFè§£é\x94\x81è\x8B±å\x9B½å\x9C°å\x8Cºé\x9D\
+        \x9Eè\x87ªå\x88¶å\x89§-ChatGPT-144.217.164.29:12000"
+      type: ss
+      server: 144.217.164.29
+      port: 12000
+      password: 8JCsPssfgS8tiRwiMlhARg==
+      cipher: aes-256-gcm
+  - name: "VMESS-æ\x9Cªç\x9F¥>å¾·å\x9B½-NFè§£é\x94\x81å\x8D°åº¦å\x9C°å\x8Cºé\x9D\x9E\
+        è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080"
+      type: vmess
+      server: 547.rtxconfigz.shop
+      port: 8080
+      uuid: 44e57485-eccc-46ef-808f-cd17ac810018
+      alterId: 0
+      cipher: auto
+      network: ws
+      servername: node4.rtxconfigz.com
+      skip-cert-verify: true
+      ws-opts:
+        path: /@Malinda6104
+        headers:
+          HOST: node4.rtxconfigz.com
+  - name: "VMESS-ç¾\x8Eå\x9B½>æ\x97¥æ\x9C¬-NFè§£é\x94\x81æ\x97¥æ\x9C¬å\x9C°å\x8Cºé\x9D\
+        \x9Eè\x87ªå\x88¶å\x89§-ChatGPT-YouTube-t1.620720.xyz:8443"
+      type: vmess
+      server: t1.620720.xyz
+      port: 8443
+      uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+      alterId: 0
+      cipher: auto
+      network: ws
+      tls: true
+      skip-cert-verify: true
+      ws-opts:
+        path: /
+        headers:
+          Host: t1.620720.xyz
+  - name: "SS-é\x98¿å¡\x9Eæ\x8B\x9Cç\x96\x86-NFè§£é\x94\x81å\x8A æ\x8B¿å¤§å\x9C°å\x8C\
+        ºé\x9D\x9Eè\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-45.154.204.7:990"
+      type: ss
+      server: 45.154.204.7
+      port: 990
+      password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+      cipher: chacha20-ietf-poly1305
+  - name: "SS-è\x8B±å\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-146.19.49.251:443"
+      type: ss
+      server: 146.19.49.251
+      port: 443
+      password: ODfxioK0VkKxTdpVQJ4rv8HglAu0vzv6
+      cipher: chacha20-ietf-poly1305
+  - name: "VMESS-å\x8A æ\x8B¿å¤§-NFè§£é\x94\x81å\x8A æ\x8B¿å¤§å\x9C°å\x8Cºé\x9D\x9E\
+        è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-15.235.41.200:80"
+      type: vmess
+      server: 15.235.41.200
+      port: 80
+      uuid: 58fe1542-5290-40ad-815a-77707a81afe5
+      alterId: 0
+      cipher: auto
+      network: ws
+      skip-cert-verify: true
+      ws-opts:
+        path: /IOebhLMhl1CTbFHbL95myfRX2
+  - name: "SS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-71.19.148.143:443"
+      type: ss
+      server: 71.19.148.143
+      port: 443
+      password: p78naCf2EfOlRSLTX0wFVx
+      cipher: chacha20-ietf-poly1305
+  - name: "VMESS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-38.92.10.226:45979"
+      type: vmess
+      server: 38.92.10.226
+      port: 45979
+      uuid: 23bdf6df-c482-46d0-c0f4-5a98d534ea11
+      alterId: 0
+      cipher: auto
+      network: ws
+      skip-cert-verify: true
+      ws-opts:
+        path: /test
+  - name: "SS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81å\x8A æ\x8B¿å¤§å\x9C°å\x8Cºé\x9D\x9Eè\x87ªå\x88\
+        ¶å\x89§-ChatGPT-TikTok-YouTube-23.95.76.59:990"
+      type: ss
+      server: 23.95.76.59
+      port: 990
+      password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+      cipher: chacha20-ietf-poly1305
+  - name: "VMESS-å\x8A æ\x8B¿å¤§-NFè§£é\x94\x81å\x8A æ\x8B¿å¤§å\x9C°å\x8Cºé\x9D\x9E\
+        è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-51.79.102.253:80"
+      type: vmess
+      server: 51.79.102.253
+      port: 80
+      uuid: 58fe1542-5290-40ad-815a-77707a81afe5
+      alterId: 0
+      cipher: auto
+      network: ws
+      servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+      skip-cert-verify: true
+      ws-opts:
+        path: /IOebhLMhl1CTbFHbL95myfRX2
+        headers:
+          HOST: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  - name: "SSR-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-107.151.182.253:8080"
+      type: ssr
+      server: 107.151.182.253
+      port: 8080
+      password: 14fFPrbezE3HDZzsMOr6
+      cipher: rc4-md5
+      protocol: origin
+      obfs: plain
+  - name: "SS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-92.118.112.101:9483"
+      type: ss
+      server: 92.118.112.101
+      port: 9483
+      password: qFvn2fNEvBgM5knffrN96q
+      cipher: chacha20-ietf-poly1305
+  - name: "SS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-15.204.247.49:12000"
+      type: ss
+      server: 15.204.247.49
+      port: 12000
+      password: 8JCsPssfgS8tiRwiMlhARg==
+      cipher: aes-256-gcm
+  - name: "SS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-pupas-shirting-unsung.freesocks.work:443"
+      type: ss
+      server: pupas-shirting-unsung.freesocks.work
+      port: 443
+      password: p78naCf2EfOlRSLTX0wFVx
+      cipher: chacha20-ietf-poly1305
+  - name: "SS-è\x8B±å\x9B½-NFè§£é\x94\x81å\x8A æ\x8B¿å¤§å\x9C°å\x8Cºé\x9D\x9Eè\x87ªå\x88\
+        ¶å\x89§-ChatGPT-TikTok-YouTube-79.127.233.170:990"
+      type: ss
+      server: 79.127.233.170
+      port: 990
+      password: f8f7aCzcPKbsF8p3
+      cipher: chacha20-ietf-poly1305
+  - name: "VMESS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-v2ray.codefyinc.com:443"
+      type: vmess
+      server: v2ray.codefyinc.com
+      port: 443
+      uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
+      alterId: 0
+      cipher: auto
+      network: ws
+      skip-cert-verify: true
+      ws-opts:
+        path: /vmessws
+        headers:
+          Host: v2ray.codefyinc.com
+  - name: "SS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-23.95.75.146:443"
+      type: ss
+      server: 23.95.75.146
+      port: 443
+      password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
+      cipher: chacha20-ietf-poly1305
+  - name: "VMESS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-198.23.174.168:20086"
+      type: vmess
+      server: 198.23.174.168
+      port: 20086
+      uuid: 2b36304b-4f88-4ff5-9033-f4d57dbb5490
+      alterId: 0
+      cipher: auto
+      network: ws
+      skip-cert-verify: true
+      ws-opts:
+        path: /
+  - name: "SSR-è\x8B±å\x9B½-NFè§£é\x94\x81å\x8A æ\x8B¿å¤§å\x9C°å\x8Cºé\x9D\x9Eè\x87\
+        ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-79.127.233.170:989"
+      type: ssr
+      server: 79.127.233.170
+      port: 989
+      password: f8f7aCzcPKbsF8p3
+      cipher: aes-256-cfb
+      protocol: origin
+      obfs: plain
+  - name: "VMESS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-cg1c07.waimaojd.com:443"
+      type: vmess
+      server: cg1c07.waimaojd.com
+      port: 443
+      uuid: be8e3136-b874-4085-bd23-ec3699300490
+      alterId: 0
+      cipher: auto
+      network: ws
+      servername: cg1c07.waimaojd.com
+      tls: true
+      ws-opts:
+        path: /api/v1/graphql
+        headers:
+          Host: cg1c07.waimaojd.com
+  - name: "VMESS-ç¾\x8Eå\x9B½>å¾·å\x9B½-NFè§£é\x94\x81å\x8D°åº¦å\x9C°å\x8Cºé\x9D\x9E\
+        è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-support.zoom.us:8080"
+      type: vmess
+      server: support.zoom.us
+      port: 8080
+      uuid: 44e57485-eccc-46ef-808f-cd17ac810018
+      alterId: 0
+      cipher: auto
+      network: ws
+      servername: node4.rtxconfigz.com
+      skip-cert-verify: true
+      ws-opts:
+        path: /@Malinda6104
+        headers:
+          HOST: node4.rtxconfigz.com
+  - name: "VMESS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-209.126.84.189:443"
+      type: vmess
+      server: 209.126.84.189
+      port: 443
+      uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
+      alterId: 0
+      cipher: auto
+      network: ws
+      skip-cert-verify: true
+      ws-opts:
+        path: /vmessws
+        headers:
+          Host: 209.126.84.189
+  - name: "VMESS-æ\x9Cªç\x9F¥>æ¾³å¤§å\x88©äº\x9A-NFè§£é\x94\x81æ¾³å¤§å\x88©äº\x9Aè\x87\
+        ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443"
+      type: vmess
+      server: sy4.620720.xyz
+      port: 443
+      uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+      alterId: 0
+      cipher: auto
+      network: ws
+      tls: true
+      skip-cert-verify: true
+      ws-opts:
+        path: /
+        headers:
+          Host: sy4.620720.xyz
+  - name: "VMESS-æ\x9Cªç\x9F¥>ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083"
+      type: vmess
+      server: hgtrojan.zabc.net
+      port: 2083
+      uuid: e6395c20-4571-4b34-d6b1-55a5d36e49ea
+      alterId: 0
+      cipher: auto
+      network: ws
+      servername: hgtrojan.zabc.net
+      tls: true
+      skip-cert-verify: true
+      ws-opts:
+        path: /e6395c20
+        headers:
+          HOST: hgtrojan.zabc.net
+  - name: "SS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-107.175.87.207:10011"
+      type: ss
+      server: 107.175.87.207
+      port: 10011
+      password: 86039b71-ba82-4ca8-838e-87086ae666de
+      cipher: chacha20-ietf-poly1305
+  - name: "VMESS-ç¾\x8Eå\x9B½-NFè§£é\x94\x81è\x87ªå\x88¶å\x89§-ChatGPT-TikTok-YouTube-cg1c01.waimaojd.com:443"
+      type: vmess
+      server: cg1c01.waimaojd.com
+      port: 443
+      uuid: be8e3136-b874-4085-bd23-ec3699300490
+      alterId: 0
+      cipher: auto
+      network: ws
+      servername: cg1c01.waimaojd.com
+      tls: true
+      ws-opts:
+        path: /api/v1/graphql
+        headers:
+          Host: cg1c01.waimaojd.com
+  - name: "VMESS-ç¾\x8Eå\x9B½-ChatGPT-TikTok-YouTube-cg1c04.waimaojd.com:443"
+      type: vmess
+      server: cg1c04.waimaojd.com
+      port: 443
+      uuid: be8e3136-b874-4085-bd23-ec3699300490
+      alterId: 0
+      cipher: auto
+      network: ws
+      servername: cg1c04.waimaojd.com
+      tls: true
+      skip-cert-verify: true
+      ws-opts:
+        path: /api/v1/graphql
+        headers:
+          HOST: cg1c04.waimaojd.com
+  - name: "VMESS-ç¾\x8Eå\x9B½-ChatGPT-TikTok-YouTube-cg1c14.waimaojd.com:443"
+      type: vmess
+      server: cg1c14.waimaojd.com
+      port: 443
+      uuid: be8e3136-b874-4085-bd23-ec3699300490
+      alterId: 0
+      cipher: auto
+      network: ws
+      servername: cg1c14.waimaojd.com
+      tls: true
+      skip-cert-verify: true
+      ws-opts:
+        path: /api/v1/graphql
+        headers:
+          HOST: cg1c14.waimaojd.com
+  - name: 美国+华盛顿Cogent通信公司
+      type: hysteria2
+      server: hk05.jgpy.help
+      port: 21000
+      password: 573402b7-156e-4141-8c3b-f01b6ebedf05
+      sni: apple.com
+      skip-cert-verify: true
+  - name: 美国+Fastly全球Anycast节点
+      type: vless
+      server: speedtest.net
+      port: 80
+      uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846
+      network: ws
+      ws-opts:
+        path: /
+        headers:
+          Host: max-gb1.global.ssl.fastly.net
+  - name: 巴西+V2CROSS.COM
+      type: vless
+      server: 187.124.98.130
+      port: 3443
+      uuid: d4d234ea-80ea-4820-ac5e-05d653960579
+      tls: true
+      reality-opts:
+        public-key: AdSCtMttNJ-KQuURl1ynBdy8DtAbCUFG6G2qB-GbTXU
+        short-id: bc755b173467c322
+      flow: xtls-rprx-vision
+      servername: amd.com
+      client-fingerprint: chrome
+  - name: 巴西圣保罗+CloudFlare节点
+      type: trojan
+      server: 188.114.97.6
+      port: 443
+      password: mitivpn
+      network: ws
+      tls: true
+      servername: mitivpn.sddde.ssddl.globddal.fassdtdly.cow.mitivpn.site
+      alpn:
+      - http/1.1
+      ws-opts:
+        path: https://chatgpt.com
+        headers:
+          Host: mitivpn.nl.sdsl.globdal.fastldy.com.mitivpn.site
+      client-fingerprint: chrome
+  - name: 美国+佛罗里达州迈阿密市
+      type: vless
+      server: ru.tgru.in
+      port: 443
+      uuid: 33bd7d64-2b03-4b19-82e5-9610afde3c3d
+      tls: true
+      reality-opts:
+        public-key: 5HItszJ7XSKexeNn6F9BSdJLXTfSiCDwUSqLi1Hxd2Q
+        short-id: cd85b2abe0feed49
+      flow: xtls-rprx-vision
+      servername: tgru.in
+      client-fingerprint: chrome
+  - name: 土耳其+V2CROSS.COM
+      type: ss
+      server: 103.130.147.40
+      port: 1122
+      password: wc/eqRPrYjnxfAJ2JKnio7cG2Ko9K9DiMwzonRjU3LI=
+      cipher: aes-256-gcm
+  - name: 美国+Fastly全球Anycast节点
+      type: vless
+      server: 151.101.66.219
+      port: 80
+      uuid: cabbfe13-038b-4dbb-9c45-5079c829abfa
+      network: ws
+      ws-opts:
+        path: /
+        headers:
+          Host: max-gb1.global.ssl.fastly.net
+  - name: 南非+V2CROSS.COM
+      type: vless
+      server: quarenty.site
+      port: 8443
+      uuid: 0d5cba76-b113-4085-ae38-1cd3f0f77523
+      tls: true
+      reality-opts:
+        public-key: zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04
+        short-id: 205748bc0f24a747
+      flow: xtls-rprx-vision
+      servername: storage.yandex.net
+      client-fingerprint: chrome
+  - name: 荷兰+V2CROSS.COM
+      type: vless
+      server: 194.26.229.161
+      port: 443
+      uuid: 5729c1fc-c7cf-41b7-8c17-f9b5f59772da
+      tls: true
+      reality-opts:
+        public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      flow: xtls-rprx-vision
+      servername: se.sellflow.org
+      client-fingerprint: chrome
+  - name: 英国+V2CROSS.COM
+      type: trojan
+      server: 185.126.236.44
+      port: 443
+      password: BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL
+      tls: true
+      servername: www.mesaly.click
+      skip-cert-verify: true
+      client-fingerprint: chrome
+  - name: 美国+Fastly全球Anycast节点
+      type: vless
+      server: 151.101.194.219
+      port: 80
+      uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846
+      network: ws
+      ws-opts:
+        path: /
+        headers:
+          Host: max-gb1.global.ssl.fastly.net
+  - name: 美国+CloudFlare节点
+      type: trojan
+      server: 104.20.42.250
+      port: 443
+      password: humanity
+      network: ws
+      tls: true
+      servername: www.calmloud.com
+      alpn:
+      - http/1.1
+      ws-opts:
+        path: /assignment
+        headers:
+          Host: www.calmloud.com
+      client-fingerprint: chrome
+  - name: 美国+V2CROSS.COM
+      type: vless
+      server: nl.tgru.in
+      port: 443
+      uuid: 33bd7d64-2b03-4b19-82e5-9610afde3c3d
+      tls: true
+      reality-opts:
+        public-key: 5HItszJ7XSKexeNn6F9BSdJLXTfSiCDwUSqLi1Hxd2Q
+        short-id: 3287e9988ca1e611
+      flow: xtls-rprx-vision
+      servername: tgru.in
+      client-fingerprint: chrome
+  - name: 美国+V2CROSS.COM
+      type: vless
+      server: de2.tgru.in
+      port: 443
+      uuid: 33bd7d64-2b03-4b19-82e5-9610afde3c3d
+      tls: true
+      reality-opts:
+        public-key: 5HItszJ7XSKexeNn6F9BSdJLXTfSiCDwUSqLi1Hxd2Q
+        short-id: 3287e9988ca1e611
+      flow: xtls-rprx-vision
+      servername: tgru.in
+      client-fingerprint: chrome
+  - name: VMESS-51.254.133.152-法国 ovh
+      type: vmess
+      server: 51.254.133.152
+      port: 80
+      uuid: ac8bcf5e-bb58-4e8b-b4e4-5fdea010a6c6
+      alterId: 0
+      cipher: auto
+      network: ws
+      ws-opts:
+        path: /vmess
+        headers:
+          Host: fr5.niekotin.de
