@@ -1,11 +1,11 @@
 proxies:
-- name: SS-加拿大\u003e英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000
+- name: SS-加拿大>英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000
   type: ss
   server: 144.217.164.29
   port: 12000
   password: 8JCsPssfgS8tiRwiMlhARg==
   cipher: aes-256-gcm
-- name: VMESS-未知\u003e德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080
+- name: VMESS-未知>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080
   type: vmess
   server: 547.rtxconfigz.shop
   port: 8080
@@ -21,7 +21,7 @@ proxies:
     path: /@Malinda6104
     headers:
       HOST: node4.rtxconfigz.com
-- name: VMESS-美国\u003e日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443
+- name: VMESS-美国>日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443
   type: vmess
   server: t1.620720.xyz
   port: 8443
@@ -193,7 +193,7 @@ proxies:
     path: /api/v1/graphql
     headers:
       Host: cg1c07.waimaojd.com
-- name: VMESS-美国\u003e德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-support.zoom.us:8080
+- name: VMESS-美国>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-support.zoom.us:8080
   type: vmess
   server: support.zoom.us
   port: 8080
@@ -224,7 +224,7 @@ proxies:
     path: /vmessws
     headers:
       Host: 209.126.84.189
-- name: VMESS-未知\u003e澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443
+- name: VMESS-未知>澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443
   type: vmess
   server: sy4.620720.xyz
   port: 443
@@ -240,7 +240,7 @@ proxies:
     path: /
     headers:
       Host: sy4.620720.xyz
-- name: VMESS-未知\u003e美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083
+- name: VMESS-未知>美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083
   type: vmess
   server: hgtrojan.zabc.net
   port: 2083
@@ -315,89 +315,73 @@ proxies:
       HOST: cg1c14.waimaojd.com
 - name: 美国+CloudFlare节点
   type: vless
-  server: 104.21.80.180
-  port: 80
-  uuid: fe273991-0514-4a16-8ec4-b15ae861c000
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: zyzzzoao.xn--fiqv8j.eu.org
-- name: 俄罗斯+V2CROSS.COM
-  type: vless
-  server: 91.193.58.17
-  port: 2083
-  uuid: af475b0e-0c07-40fe-b4db-3dea2c0a481d
+  server: adf.ly
+  port: 443
+  uuid: 1679af35-6dd6-4c09-ae3b-18f239217f3e
   network: ws
   tls: true
-  servername: edgetunnel-cmliu.lyqnihao.dpdns.org
+  servername: rAyAn-007.pArViN.DpDnS.OrG
+  client-fingerprint: chrome
   ws-opts:
-    path: /fp=chrome
+    path: /?ed=2560
     headers:
-      Host: edgetunnel-cmliu.lyqnihao.dpdns.org
+      Host: rayan-007.parvin.dpdns.org
+  skip-cert-verify: true
+- name: 美国+CloudFlare节点
+  type: trojan
+  server: 104.20.6.134
+  port: 443
+  password: humanity
+  network: ws
+  sni: www.calmloud.com
+  tls: true
+  alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmloud.com
 - name: 美国+CloudFlare节点
   type: vless
-  server: 172.64.147.29
+  server: 104.17.72.206
   port: 80
-  uuid: fe273991-0514-4a16-8ec4-b15ae861c000
+  uuid: 1de37726-744b-46e1-9101-c926b3402e82
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: zyzzzoao.xn--fiqv8j.eu.org
-- name: 美国+V2CROSS.COM
-  type: ss
-  server: 149.28.255.6
-  port: 816
-  cipher: chacha20-ietf-poly1305
-  password: GyZ5Xo0ht41vYmW3H4
-- name: 日本+东京Fastly节点
+      Host: v2.v2configlab.workers.dev
+- name: 美国+V2CORSS.COM
   type: vless
-  server: 151.101.109.223
-  port: 80
-  uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: max-gb1.global.ssl.fastly.net
-- name: 土耳其+V2CROSS.COM
-  type: ss
-  server: 103.130.147.40
-  port: 1122
-  cipher: aes-256-gcm
-  password: wc/eqRPrYjnxfAJ2JKnio7cG2Ko9K9DiMwzonRjU3LI=
+  server: hadi.neticoshop.ilove85.net
+  port: 28360
+  uuid: 5ade29da-89c1-4546-bac0-542f856aff2d
+  network: tcp
 - name: 克罗地亚+V2CROSS.COM
   type: vless
-  server: cdn7-09.vk-cdnvideo.com
+  server: 46.229.243.144
   port: 8443
   uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
   network: tcp
   tls: true
-  servername: cdn7-09.vk-cdnvideo.com
-- name: 美国+Fastly全球Anycast节点
-  type: vless
-  server: 151.101.66.219
-  port: 80
-  uuid: cabbfe13-038b-4dbb-9c45-5079c829abfa
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: max-gb1.global.ssl.fastly.net
+  servername: cdn3-87.vk-cdnvideo.com
+  client-fingerprint: chrome
 - name: 美国+CloudFlare节点
-  type: vless
-  server: 172.64.147.175
-  port: 80
-  uuid: fe273991-0514-4a16-8ec4-b15ae861c000
+  type: trojan
+  server: 104.16.174.117
+  port: 443
+  password: humanity
   network: ws
+  sni: www.ignitelimit.com
+  tls: true
   ws-opts:
-    path: /
+    path: /assignment
     headers:
-      Host: zyzzzoao.xn--fiqv8j.eu.org
+      Host: www.ignitelimit.com
 - name: 美国+Fastly全球Anycast节点
   type: vless
-  server: 151.101.194.219
+  server: speedtest.net
   port: 80
   uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846
   network: ws
@@ -405,13 +389,46 @@ proxies:
     path: /
     headers:
       Host: max-gb1.global.ssl.fastly.net
-- name: 美国+Fastly全球Anycast节点
+- name: 美国+V2CROSS.COM
   type: vless
-  server: 151.101.0.1
+  server: 167.104.223.68
+  port: 7443
+  uuid: 1c0277ad-bb4d-496f-bc0c-40ccee03fca5
+  network: tcp
+  tls: true
+  reality-opts:
+    public-key: 5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI
+    short-id: d82fb387
+  flow: xtls-rprx-vision
+  servername: www.microsoft.com
+  client-fingerprint: chrome
+- name: 美国+V2CROSS.COM
+  type: vless
+  server: 199.232.197.131
   port: 80
-  uuid: cabbfe13-038b-4dbb-9c45-5079c829abfa
+  uuid: 0058c215-ab1e-400c-a403-b5b2fda7e846
   network: ws
   ws-opts:
     path: /
     headers:
       Host: max-gb1.global.ssl.fastly.net
+- name: 美国+CloudFlare节点
+  type: vless
+  server: 172.64.146.68
+  port: 443
+  uuid: fc965ad9-bdd7-4815-ad71-b39ec5972dc1
+  network: ws
+  tls: true
+  servername: octopusss4.com
+  client-fingerprint: chrome
+  ws-opts:
+    path: /tsghdws
+    headers:
+      Host: octopusss4.com
+- name: 克罗地亚+V2CROSS.COM
+  type: vless
+  server: cdn3-87.vk-cdnvideo.com
+  port: 8443
+  uuid: 931729a8-3c20-4841-89a1-f18dc9ce0a6f
+  network: tcp
+  tls: true
